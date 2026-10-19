@@ -1,0 +1,16 @@
+:root{--def:#0a7a55;--thy:#2563c9;--mem:#c77700;--ex:#6b3fa0;--pyq:#c0392b}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:.4rem 1rem;position:sticky;top:0;z-index:9;background:var(--pico-background-color);border-bottom:1px solid var(--pico-muted-border-color)}
+.topbar button{width:auto;margin:0;padding:.2rem .9rem}
+:is(.definition,.theory,.memorize,.example,.pyq,.warn){border-left:5px solid var(--c);padding:.6rem 1rem;margin:1rem 0;border-radius:6px;background:color-mix(in srgb,var(--c) 9%,transparent);break-inside:avoid}
+:is(.definition,.theory,.memorize,.example,.pyq,.warn)::before{display:block;font:700 .7rem sans-serif;letter-spacing:.08em;color:var(--c)}
+.definition{--c:var(--def)}.definition::before{content:"DEFINITION"}
+.theory{--c:var(--thy)}.theory::before{content:"THEORY"}
+.memorize{--c:var(--mem)}.memorize::before{content:"MEMORIZE"}
+.example{--c:var(--ex)}.example::before{content:"EXAMPLE"}
+.pyq{--c:var(--pyq)}.pyq::before{content:"PREVIOUS YEAR QUESTION"}
+.warn{--c:#b00}.warn::before{content:"COMMON MISTAKES"}
+.answer{display:inline-block;border:2px solid currentColor;padding:.3rem .8rem;font-weight:700;margin:.3rem 0}
+[data-p="3"]::after{content:" ★★★";color:#d98a00}[data-p="2"]::after{content:" ★★";color:#d98a00}[data-p="1"]::after{content:" ★";color:#d98a00}
+.fig{max-width:420px;width:100%}
+@media print{.topbar{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2,h3{break-after:avoid}table{break-inside:avoid}}
+@page{margin:14mm}

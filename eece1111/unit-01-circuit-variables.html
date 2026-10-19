@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EECE 1111 · Unit 1 — Circuit Variables and Elements</title>
+<meta name="description" content="Charge, current, voltage, power, sources, R/L/C, average and RMS of non-sinusoidal waves; solved PYQs 2021-2025">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+<link rel="stylesheet" href="../assets/style.css"><script defer src="../assets/site.js"></script></head>
+<body data-root=".."><main class="container">
+<h1>Unit 1 — Circuit Variables and Elements</h1>
+<p>Sources: Sadiku Ch.1 · Theraja Ch.11 · past papers 2021–2025. ★★★ = asked almost every year.</p>
+
+<h2 data-p="2">1.1 Charge, current, voltage</h2>
+<div class="definition"><b>Charge</b> \(q\): basic electrical quantity, unit coulomb (C). \(e=1.602\times10^{-19}\) C, so 1 C ≈ \(6.24\times10^{18}\) electrons.</div>
+<div class="definition"><b>Current</b>: rate of flow of charge, \(i=\dfrac{dq}{dt}\), \(q=\int i\,dt\). Unit ampere (1 A = 1 C/s). Direction = flow of positive charge (opposite to electrons).</div>
+<div class="definition"><b>Voltage</b>: energy per unit charge between two points, \(v=\dfrac{dw}{dq}\). 1 V = 1 J/C. The + terminal is at higher potential.</div>
+
+<h2 data-p="3">1.2 Power, energy and sign convention</h2>
+<div class="definition"><b>Power</b> \(p=\dfrac{dw}{dt}=vi\) (watt). <b>Energy</b> \(w=\int p\,dt\) (joule); 1 kWh = \(3.6\times10^{6}\) J; constant power: \(E=Pt\).</div>
+<div class="memorize"><b>Passive sign convention.</b> Current enters the + terminal → \(p=+vi\) is <b>absorbed</b>. Current leaves the + terminal → \(p=-vi\): the element <b>supplies</b>. In any circuit \(\sum p=0\). Use this to check every answer.</div>
+
+<h2 data-p="3">1.3 Circuit elements</h2>
+<table><thead><tr><th></th><th>Active element</th><th>Passive element</th></tr></thead><tbody>
+<tr><td>Meaning</td><td>Can <b>deliver</b> energy to the circuit</td><td>Cannot generate energy; absorbs or stores it</td></tr>
+<tr><td>Examples</td><td>Batteries, generators, op-amps, independent and dependent sources</td><td>Resistor (dissipates), inductor and capacitor (store)</td></tr>
+<tr><td>Power</td><td>Absorbed power can be negative (\(p&lt;0\))</td><td>R: \(p\ge0\); L, C return what they store</td></tr></tbody></table>
+<table><thead><tr><th></th><th>Independent source</th><th>Dependent (controlled) source</th></tr></thead><tbody>
+<tr><td>Value</td><td>Fixed by itself, not affected by the rest of the circuit</td><td>Controlled by a voltage or current elsewhere in the circuit</td></tr>
+<tr><td>Symbol</td><td>Circle (voltage: ±, current: arrow)</td><td>Diamond</td></tr>
+<tr><td>Use</td><td>Real energy supply</td><td>Models transistors and amplifiers</td></tr></tbody></table>
+<div class="memorize">Four types: VCVS \(v=\mu v_x\) · CCVS \(v=r\,i_x\) · VCCS \(i=g\,v_x\) · CCCS \(i=\beta i_x\). \(\mu,\beta\) have no unit; \(r\) in Ω; \(g\) in S.</div>
+
+<h2 data-p="2">1.4 Resistance, inductance, capacitance</h2>
+<table><thead><tr><th></th><th>Resistor</th><th>Inductor</th><th>Capacitor</th></tr></thead><tbody>
+<tr><td>Definition</td><td>Opposes current, \(R=\rho l/A\) (Ω); \(G=1/R\) (S)</td><td>\(L=N\Phi/I\) (H)</td><td>\(C=Q/V\) (F)</td></tr>
+<tr><td>v–i law</td><td>\(v=iR\)</td><td>\(v=L\,di/dt\)</td><td>\(i=C\,dv/dt\)</td></tr>
+<tr><td>Energy</td><td>Lost as heat; \(p=i^2R=v^2/R\)</td><td>\(w=\tfrac12Li^2\)</td><td>\(w=\tfrac12Cv^2=\dfrac{Q^2}{2C}\)</td></tr>
+<tr><td>DC steady state</td><td>Same</td><td>Short circuit</td><td>Open circuit</td></tr>
+<tr><td>Cannot jump</td><td>—</td><td>Current</td><td>Voltage</td></tr>
+<tr><td>Series</td><td>\(R_1+R_2\)</td><td>\(L_1+L_2\)</td><td>\(1/C_1+1/C_2\)</td></tr>
+<tr><td>Parallel</td><td>\(1/R_1+1/R_2\)</td><td>\(1/L_1+1/L_2\)</td><td>\(C_1+C_2\)</td></tr></tbody></table>
+<div class="theory" data-p="2"><b>Proof: energy in a capacitor, \(W=Q^2/2C\)</b> (2024 Q8b, 2021 Q6b). Adding a small charge \(dq\) at voltage \(v=q/C\) takes \(dw=v\,dq=\dfrac{q}{C}dq\). Charging 0 → Q:
+\[W=\int_0^Q\frac{q}{C}\,dq=\frac{Q^2}{2C}=\tfrac12CV^2=\tfrac12QV\]
+Same idea for an inductor: \(dw=vi\,dt=Li\,di\Rightarrow W=\tfrac12LI^2\).</div>
+
+<h2 data-p="3">1.5 Non-sinusoidal waves: average and RMS</h2>
+<div class="definition"><b>Average value</b> \(X_{avg}=\dfrac1T\int_0^T x\,dt\) (area ÷ period; for a symmetric wave use the half cycle). <b>RMS (effective) value</b> \(X_{rms}=\sqrt{\dfrac1T\int_0^T x^2\,dt}\): the DC value giving the same heating. <b>Form factor</b> \(K_f=X_{rms}/X_{avg}\). <b>Peak factor</b> \(K_p=X_m/X_{rms}\).</div>
+<div class="theory"><b>Why important:</b> RMS gives the effective value (\(P=I^2R\)), so supplies and meters are rated in RMS (230 V mains). Average is what a DC meter reads and what rectifiers and chargers deliver. Form and peak factor describe wave shape and insulation needs.</div>
+<table><thead><tr><th>Wave</th><th>Average</th><th>RMS</th><th>\(K_f\)</th><th>\(K_p\)</th></tr></thead><tbody>
+<tr><td>Sine (half cycle)</td><td>\(2V_m/\pi=0.637V_m\)</td><td>\(V_m/\sqrt2=0.707V_m\)</td><td>1.11</td><td>1.414</td></tr>
+<tr><td>Full-wave rectified</td><td>\(2V_m/\pi\)</td><td>\(V_m/\sqrt2\)</td><td>1.11</td><td>1.414</td></tr>
+<tr><td>Half-wave rectified</td><td>\(V_m/\pi=0.318V_m\)</td><td>\(V_m/2\)</td><td>1.57</td><td>2</td></tr>
+<tr><td>Square (±V<sub>m</sub>)</td><td>\(V_m\)</td><td>\(V_m\)</td><td>1</td><td>1</td></tr>
+<tr><td>Triangular (0 to V<sub>m</sub>)</td><td>\(V_m/2\)</td><td>\(V_m/\sqrt3=0.577V_m\)</td><td>1.155</td><td>1.732</td></tr></tbody></table>
+<div class="memorize"><b>Method for any piecewise wave:</b> 1) find T · 2) write each segment (line: \(y=mt+c\)) · 3) integrate \(x\) or \(x^2\) per segment · 4) add, divide by T · 5) RMS: take the square root · 6) power in R: \(P=I_{rms}^2R\).</div>
+<div class="theory" data-p="2"><b>Why \(V_{rms}=V_m/\sqrt2\)</b> (2021 Q5b). For \(v=V_m\cos\omega t\), use \(\cos^2\theta=\tfrac12(1+\cos2\theta)\):
+\[V_{rms}^2=\frac{V_m^2}{T}\int_0^T\tfrac12(1+\cos2\omega t)\,dt=\frac{V_m^2}{T}\cdot\frac T2=\frac{V_m^2}{2}\]
+The \(\cos2\omega t\) term integrates to zero over a full cycle, so \(V_{rms}=0.707V_m\).</div>
+
+<h2 data-p="3">1.6 Solved problems from past papers</h2>
+<div class="pyq"><b>P1 · 2025 Q1(c):</b> RMS of the current wave and average power in a 2 Ω resistor.
+<svg class="fig" viewBox="0 0 250 120" role="img" aria-label="Sawtooth current wave, period 4 s"><path d="M20 60H240M20 8V112" stroke="gray" fill="none"/><polyline points="20,60 70,15 70,105 120,105 120,60 170,15 170,105 220,105 220,60" fill="none" stroke="#2563c9" stroke-width="2"/><text x="72" y="14" font-size="9" fill="gray">10</text><text x="72" y="116" font-size="9" fill="gray">−10 A</text><text x="68" y="73" font-size="9" fill="gray">2</text><text x="118" y="73" font-size="9" fill="gray">4 s</text></svg>
+<p>T = 4 s. 0&lt;t&lt;2: \(i=5t\). 2&lt;t&lt;4: \(i=-10\) A.</p>
+\[I_{rms}^2=\frac14\Big[\int_0^2(5t)^2dt+\int_2^4(-10)^2dt\Big]=\frac14\Big[25\cdot\frac83+200\Big]=66.67\]
+<p class="answer">I<sub>rms</sub> = 8.165 A, P = I<sub>rms</sub>²R = 133.3 W</p></div>
+<div class="pyq"><b>P2 · 2025 Q7(c):</b> average and effective value of the square wave (20 V for 0.1 s, then 0 V for 0.2 s).
+<p>T = 0.3 s. \(V_{avg}=\dfrac{20(0.1)}{0.3}=6.67\) V. \(V_{rms}^2=\dfrac{20^2(0.1)}{0.3}=133.3\).</p>
+<p class="answer">V<sub>avg</sub> = 6.67 V, V<sub>rms</sub> = 11.55 V</p></div>
+<div class="pyq"><b>P3 · 2024 Q1(a) (2022 Q1a same type):</b> \(i=10\cos60\pi t\) A at t = 4 ms; power for (a) \(v=3i\), (b) \(v=3\,di/dt\).
+<p>Angle \(=60\pi(0.004)=43.2^\circ\), \(i=10\cos43.2^\circ=7.290\) A.</p>
+<p>(a) \(v=3i=21.87\) V, \(p=3i^2=159.4\) W (absorbed).</p>
+<p>(b) \(di/dt=-600\pi\sin43.2^\circ=-1290.3\) A/s, \(v=-3871\) V, \(p=vi=-28.2\) kW: the inductor supplies power at that instant.</p>
+<p class="answer">(a) 159.4 W absorbed · (b) −28.2 kW (supplied)</p></div>
+<div class="pyq"><b>P4 · 2024 Q1(c), 2021 Q1(c):</b> power of each element (8 A, 2 V, 3 A, I = 5 A, 0.6I, 5 V, 3 V).
+<p>KCL at top node: 8 = 3 + 5 ✓. Dependent source: \(0.6I=3\) V. \(p_1=-5(8)=-40\) W (supplies) · \(p_2=2(8)=+16\) W · \(p_3=3(3)=+9\) W · \(p_4=3(5)=+15\) W. Check: −40+16+9+15 = 0 ✓.</p>
+<p class="answer">p₁ = −40 W, p₂ = 16 W, p₃ = 9 W, p₄ = 15 W</p>
+<small>Polarities were read from the figure and match the standard textbook solution; confirm against your paper.</small></div>
+<div class="pyq"><b>P5 · 2021 Q1(a):</b> energy used by a 100 W bulb in two hours.
+<p class="answer">E = Pt = 100 × 2 = 200 Wh = 0.2 kWh = 720 kJ</p></div>
+<p><small>Still in the old PDF, to be added: 2024 Q4(a) effective value (T = 3 s, figure reading to confirm), 2022 Q1(a), 2023 Q1(a), model answers for theory questions.</small></p>
+
+<h2 data-p="3">1.7 Past-question map</h2>
+<table><thead><tr><th>Year</th><th>Questions (marks)</th></tr></thead><tbody>
+<tr><td>2025</td><td>Q1a independent vs dependent (3) · Q1b RMS and average (4) · Q1c RMS + power (4⅔) · Q2a active vs passive (3) · Q7c square wave (4⅔)</td></tr>
+<tr><td>2024</td><td>Q1a charge, current, power (5) · Q1b active/passive (2⅔) · Q1c CCVS + power of elements (4) · Q4a effective value (4) · Q8b W = Q²/2C (4)</td></tr>
+<tr><td>2023</td><td>Q1a define V, I, P, E + power of elements (6) · Q1b VCVS, active/passive (3)</td></tr>
+<tr><td>2022</td><td>Q1a dependent/independent + power (4) · Q1b inductance/capacitance (4) · Q3a,b RMS, average, form, peak factor (4+4) · Q4c circuit, AC vs DC (2⅔)</td></tr>
+<tr><td>2021</td><td>Q1a active/passive + bulb (4) · Q1b resistor (3⅔) · Q1c power of elements (4) · Q4c RMS, average, form factor (3) · Q5b \(V_{rms}=V_m/\sqrt2\) (4) · Q6a,b (3+4)</td></tr></tbody></table>
+
+<h2>1.8 Quick revision</h2>
+<div class="memorize">\(i=\dfrac{dq}{dt}\) · \(v=\dfrac{dw}{dq}\) · \(p=vi\) · \(w=\int p\,dt\) · \(\sum p=0\) · \(W_L=\tfrac12Li^2\) · \(W_C=\tfrac12Cv^2=\dfrac{Q^2}{2C}\) · sine: 0.707, 0.637, 1.11, 1.414</div>
+<div class="warn"><ul><li>Full-cycle average of a symmetric wave is 0: quote the half-cycle value.</li><li>For RMS, square first, then average, then root.</li><li>Check the + terminal and the arrow for the power sign, then confirm \(\sum p=0\).</li><li>The period of a pulse train includes the zero interval.</li></ul></div>
+</main></body></html>
