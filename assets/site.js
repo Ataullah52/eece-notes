@@ -15,6 +15,7 @@ if(unit&&!isIdx){const hs=[...d.querySelectorAll('main h2')];
 if(hs.length>2){hs.forEach((h,i)=>h.id=h.id||'s'+(i+1));const t=d.createElement('div');t.className='toc';
 t.innerHTML='<b>Contents</b><ol>'+hs.map(h=>'<li><a href="#'+h.id+'">'+h.innerHTML.replace(/<[^>]+>/g,'')+'</a></li>').join('')+'</ol>';
 const p=unit.nextElementSibling;(p&&p.tagName==='P'?p:unit).after(t);}}
+let was;addEventListener('beforeprint',()=>{was=root.dataset.theme;root.dataset.theme='light'});addEventListener('afterprint',()=>{if(was)root.dataset.theme=was;else delete root.dataset.theme});
 const tg=d.getElementById('tg'),sync=()=>tg.textContent=isDark()?'☀ Light':'☾ Dark';sync();
 tg.onclick=()=>{const n=isDark()?'light':'dark';root.dataset.theme=n;localStorage.setItem(K,n);sync()};
 if(!/\\\(|\\\[/.test(d.body.innerHTML))return;

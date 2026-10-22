@@ -2,169 +2,757 @@
  "semesters": [
   {
    "id": "eece11",
+   "code": "EECE11",
    "year": 1,
    "semester": 1,
+   "title": "1st Year · 1st Semester",
+   "subtitle": "B.Sc. Engineering Curriculum (Session 2025–2026) · 15.00 Theory Credits + 3.75 Sessional Credits",
+   "credits": 18.75,
+   "routine": {
+    "timeSlots": [
+     "10-11",
+     "11-12",
+     "12-01",
+     "02-03",
+     "03-04"
+    ],
+    "rows": [
+     {
+      "day": "Saturday",
+      "slots": [
+       "",
+       "",
+       "CHEM 1101",
+       "EECE 1111",
+       "EECE 1111"
+      ]
+     },
+     {
+      "day": "Sunday",
+      "slots": [
+       "PHY 1101",
+       "PHY 1101",
+       "MATH 1101",
+       "EECE 1111 L",
+       "EECE 1111 L"
+      ]
+     },
+     {
+      "day": "Monday",
+      "slots": [
+       "",
+       "HUM 1101",
+       "HUM 1101",
+       "PHY 1101",
+       ""
+      ]
+     },
+     {
+      "day": "Tuesday",
+      "slots": [
+       "EECE 1111",
+       "MATH 1101",
+       "MATH 1101",
+       "CE 1101",
+       "CE 1101"
+      ]
+     },
+     {
+      "day": "Wednesday",
+      "slots": [
+       "CHEM 1101",
+       "CHEM 1101",
+       "HUM 1101",
+       "",
+       ""
+      ]
+     }
+    ]
+   },
    "courses": [
     {
      "id": "eece1111",
+     "code": "EECE1111",
      "title": "Electrical Circuits I",
      "type": "Theory",
-     "credits": 3.0,
+     "credits": 3,
+     "contactHours": 3,
+     "overview": "Circuit Variables and Elements, Basic Laws, Techniques for Circuit Analysis, DC Network Theorem, AC Network Theorem, and Sinusoidal Functions.",
+     "books": {
+      "professor": [
+       "Fundamentals of Electric Circuits by Charles K. Alexander and Matthew N. O. Sadiku",
+       "A Textbook of Electrical Technology (Vol. I) by B. L. Theraja and A. K. Theraja"
+      ],
+      "syllabus": [
+       "Alternating-current Circuits by G. F. Corcoran and R. M. Kerchner",
+       "Introduction to Electric Circuits by R. C. Dorf and J. A. Svoboda",
+       "Electrical Engineering by R. P. Ward",
+       "Fundamentals of Electricity and Magnetism by Arthur Kip",
+       "Introductory Circuit Analysis by Robert L. Boylestad"
+      ]
+     },
      "topics": [
       {
        "n": 1,
-       "title": "Circuit variables and elements"
+       "label": "Module 01",
+       "title": "Circuit Variables and Elements",
+       "summary": "Voltage, current, power, energy, independent and dependent sources, resistance, inductance and capacitance. Introduce to non-sinusoidal wave, calculation of RMS and average value for non-sinusoidal waveforms.",
+       "minutes": 35,
+       "updated": "October 2026",
+       "file": "module-01-circuit-variables-and-elements.html",
+       "blocks": 7
       },
       {
        "n": 2,
-       "title": "Basic laws"
+       "label": "Module 02",
+       "title": "Basic Laws",
+       "summary": "Ohm's law, Kirchhoff's current and voltage laws, Voltage divider and current divider rules, Delt-Wye equivalent circuits. Series, parallel and series-parallel circuits and their equivalents.",
+       "minutes": 45,
+       "updated": "October 2026",
+       "file": "module-02-basic-laws.html",
+       "blocks": 6
       },
       {
        "n": 3,
-       "title": "Nodal and mesh analysis, source transformation"
+       "label": "Module 03",
+       "title": "Techniques for Circuit Analysis",
+       "summary": "Nodal and mesh analysis including supernode, supermesh. Techniques of General DC/AC Circuit Analysis (Containing both independent and dependent sources) Node-voltage method, Mesh-current method, Source Transformations.",
+       "minutes": 40,
+       "updated": "October 2026",
+       "file": "module-03-techniques-for-circuit-analysis.html",
+       "blocks": 4
       },
       {
        "n": 4,
-       "title": "DC network theorems"
+       "label": "Module 04",
+       "title": "DC Network Theorem",
+       "summary": "Thevenin's theorem, Norton's theorem and superposition theorem with applications in circuits having independent and dependent sources, Millman's theorem, Substitution theorem, Maximum power transfer theorem and Reciprocity Theorem.",
+       "minutes": 40,
+       "updated": "October 2026",
+       "file": "module-04-dc-network-theorem.html",
+       "blocks": 4
       },
       {
        "n": 5,
-       "title": "Sinusoids, phasors, AC power, resonance"
+       "label": "Module 05",
+       "title": "AC Network Theorem",
+       "summary": "Thevenin's theorem, Norton's theorem, superposition theorem, Millman's theorem, Substitution theorem, Maximum power transfer theorem and Reciprocity Theorem.",
+       "minutes": 35,
+       "updated": "October 2026",
+       "file": "module-05-ac-network-theorem.html",
+       "blocks": 4
       },
       {
        "n": 6,
-       "title": "AC network theorems"
-      },
-      {
-       "n": 7,
-       "title": "Magnetic circuits, capacitor and inductor energy"
+       "label": "Module 06",
+       "title": "Sinusoidal Functions",
+       "summary": "Instantaneous current, voltage, power, effective current and voltage, phasors and complex quantities. Impedance, admittance, reactance, susceptance of RL, RC and RLC branches.",
+       "minutes": 45,
+       "updated": "October 2026",
+       "file": "module-06-sinusoidal-functions.html",
+       "blocks": 4
       }
      ]
     },
     {
      "id": "eece1112",
+     "code": "EECE1112",
      "title": "Electrical Circuits I Sessional",
      "type": "Sessional",
      "credits": 1.5,
-     "topics": []
-    },
-    {
-     "id": "phy1101",
-     "title": "Physics",
-     "type": "Theory",
-     "credits": 3.0,
-     "topics": []
-    },
-    {
-     "id": "ce1101",
-     "title": "Engineering Graphics",
-     "type": "Sessional",
-     "credits": 1.5,
-     "topics": []
-    },
-    {
-     "id": "hum1101",
-     "title": "English",
-     "type": "Theory",
-     "credits": 3.0,
-     "topics": []
-    },
-    {
-     "id": "math1101",
-     "title": "Differential Calculus and Analytical Geometry",
-     "type": "Theory",
-     "credits": 3.0,
+     "contactHours": 3,
+     "overview": "Laboratory sessional experiments based on EECE 1111 (Electrical Circuits I).",
+     "books": {
+      "professor": [
+       "Fundamentals of Electric Circuits by Charles K. Alexander and Matthew N. O. Sadiku"
+      ],
+      "syllabus": [
+       "Introductory Circuit Analysis by Robert L. Boylestad"
+      ]
+     },
      "topics": [
       {
        "n": 1,
-       "title": "Functions, limit and continuity"
+       "label": "Module 01",
+       "title": "Electrical Circuits I Laboratory Experiments",
+       "summary": "Experimental verification of Ohm's Law, KCL, KVL, Superposition, Thevenin's, Norton's, Maximum Power Transfer theorems, and RLC AC branch measurements.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
+    },
+    {
+     "id": "phy1101",
+     "code": "PHY1101",
+     "title": "Physics",
+     "type": "Theory",
+     "credits": 3,
+     "contactHours": 3,
+     "overview": "Electrostatic and Steady Electric Current, Magnetic Field and Electromagnetic Induction, Waves and Oscillations, Optics, Quantum Mechanics, Sound and Acoustics, and Thermoelectricity and Photoelectricity.",
+     "books": {
+      "professor": [
+       "Physics Part I and Part II by David Halliday and Robert Resnick"
+      ],
+      "syllabus": [
+       "Textbook of Optics by Francis A. Jenkins and Harvey E. White",
+       "Thermodynamics by F. W. Sears",
+       "Classical Thermodynamics by D. Elwell & A. J. Pointon",
+       "Modern Physics by A. Beiser",
+       "Electricity and Magnetism by Edward M. Purcell",
+       "Electricity and Magnetism by Stanley Ramsey",
+       "Oscillations and Waves: An Introduction by Richard Fitzpatrick",
+       "Waves and Oscillations by R. A. Waldron"
+      ]
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Electrostatic and Steady Electric Current",
+       "summary": "Electric field in dielectric media, Energy in an electrostatic field. Concept of electric current, Current density, Equation of continuity, Resistivity and conductivity, Electrostatic force, Electromotive force.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 2,
-       "title": "Differentiability, successive differentiation and Leibniz theorem"
+       "label": "Module 02",
+       "title": "Magnetic Field and Electromagnetic Induction",
+       "summary": "Magnetic induction, Magnetic force on a current, Torque on a current loop, Ampere's law, Biot-Savart law and its applications, Faraday's laws of electromagnetic induction, Lenz's law, Induced current and voltage, Self-inductance and mutual inductance, Inductor.",
+       "minutes": 35,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 3,
-       "title": "Mean value theorems, series expansion, maxima and minima"
+       "label": "Module 03",
+       "title": "Waves and Oscillations",
+       "summary": "Differential equation of simple harmonic oscillator, Total energy and average energy. Combination of simple harmonic oscillations, Spring mass system, Torsional pendulum, Two body oscillation, Reduced mass, Damped oscillation, Forced oscillation, Resonance, Progressive wave, Power and intensity of wave, Stationary wave, Group and phase velocities.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": "module-03-waves-and-oscillations.html",
+       "blocks": 1
       },
       {
        "n": 4,
-       "title": "Tangent, normal, curvature and functions of two variables"
+       "label": "Module 04",
+       "title": "Optics",
+       "summary": "Theories of light, Interference of light, Young's double slit experiment, Diffraction by single slit, Diffraction at double slit, Diffraction grating, Polarization, Classification and uses of polarization, Brewster's law, Nicol Prism.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 5,
-       "title": "Co-ordinate systems and pair of straight lines"
+       "label": "Module 05",
+       "title": "Quantum Mechanics",
+       "summary": "Wave function and wave equation, Time dependent and time independent Schrodinger's equation, De-Broglie waves, Uncertainty principle, Photoelectric effect, Quantum theory of light, Compton effect.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 6,
-       "title": "Conic sections and system of circles"
+       "label": "Module 06",
+       "title": "Sound and Acoustics",
+       "summary": "Simple harmonic motion, Wave equation, Principle of superposition. Beats, Dispersion, Phase and group velocities, Doppler's effect, Free and forced vibrations, Reverberation, Noise insulation and reduction, Compound absorption, Sound distribution, Room acoustics, Recording.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 7,
-       "title": "3D co-ordinates, direction cosines and ratios, planes and lines"
+       "label": "Module 07",
+       "title": "Thermoelectricity and Photoelectricity",
+       "summary": "Thermal electromotive forces, Seebeck effect and Peltier effect, Thermocouple and Thermo-emf, Laws of photoemission and Einstein's equation, Photoelectric cell and its use.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
+    },
+    {
+     "id": "ce1101",
+     "code": "CE1101",
+     "title": "Engineering Graphics",
+     "type": "Sessional",
+     "credits": 1.5,
+     "contactHours": 3,
+     "overview": "Introduction to orthographic projections, Drawing standards and practices, and Introduction to computer aided design (CAD).",
+     "books": {
+      "professor": [],
+      "syllabus": [
+       "Engineering Graphics (3rd Edition) by Frederick E. Giesecke, Alva Mitchell, Henry C. Spencer, Ivan L. Hill, Robert O. Loving and John Thomas Dygdon",
+       "Engineering Drawing (2nd Edition) by Frank Zozzora"
+      ]
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Introduction to Orthographic Projections",
+       "summary": "Scale drawing, Sectional view, Isometric views, Missing line, Auxiliary view, Pictorial views.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 2,
+       "label": "Module 02",
+       "title": "Drawing Standards and Practices",
+       "summary": "Interpenetrating of surfaces, Development of surfaces, Machine drawings and Technical sketching.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 3,
+       "label": "Module 03",
+       "title": "Introduction to Computer Aided Design (CAD)",
+       "summary": "Project on Engineering Drawing and CAD using Contemporary CAD tools.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
+    },
+    {
+     "id": "hum1101",
+     "code": "HUM1101",
+     "title": "English",
+     "type": "Theory",
+     "credits": 3,
+     "contactHours": 3,
+     "overview": "Introduction, Communicative English, Paragraph Writing, Essay Writing, Reading comprehension, Business Writing, Letter Writing, and Report writing.",
+     "books": {
+      "professor": [],
+      "syllabus": [
+       "Basic English Grammar by Schrampfer Azar",
+       "Advanced Grammar in Use With answers by Martin Hewings",
+       "Communicating Handbook by Loes Van",
+       "English for Business Communication Student’s Book by Simon Sweeney",
+       "Technical English: Writing, Reading and Speaking (8th Edition) by Nell Ann Pickett",
+       "Cambridge English for Engineering Student’s Book with Audio CDs (2) by A. S. Hornby"
+      ]
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Introduction",
+       "summary": "Parts of speech (Changing), Sentence making rules, different types of sentences, Tense, right forms of verbs, verb conjugation, Transformation of sentences: Different types of sentences - Converting degree, Appropriate preposition, Idioms & Phrase, Voice, Narration, Correction of sentences, WH Question, Completing sentences, Synonyms and Antonyms.",
+       "minutes": 30,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 2,
+       "label": "Module 02",
+       "title": "Communicative English",
+       "summary": "Introductions oneself, Conversation & Dialogue on recent topic, Group Discussion, Notations & Functions.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 3,
+       "label": "Module 03",
+       "title": "Paragraph Writing",
+       "summary": "Amplification of Ideas, Structure and classifications, Topic Sentence, Topic Developers, Topic Termination, Open-ended paragraph, Close-ended paragraph.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 4,
+       "label": "Module 04",
+       "title": "Essay Writing",
+       "summary": "Hints given essay, without hints essay, Free hand Essay writing on current Issues.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 5,
+       "label": "Module 05",
+       "title": "Reading Comprehension",
+       "summary": "Precise writing, Vocabulary building, Synonym & Antonym, Use of words in different Parts of speech, True-false (Yes/No/Not given), Fill in the blanks, Tree Chart, flow chart.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 6,
+       "label": "Module 06",
+       "title": "Business Writing",
+       "summary": "Agenda, Notice, Memo, Meeting Minutes, Quotation, Tender.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 7,
+       "label": "Module 07",
+       "title": "Letter Writing",
+       "summary": "Job application, Resume, Formal & Informal letter, Letter to Newspaper.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
       },
       {
        "n": 8,
-       "title": "Sphere, cone, cylinder and conicoids"
+       "label": "Module 08",
+       "title": "Report Writing",
+       "summary": "Technical Report, Lab report, Newspaper report.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
+    },
+    {
+     "id": "math1101",
+     "code": "MATH1101",
+     "title": "Differential Calculus and Analytical Geometry",
+     "type": "Theory",
+     "credits": 3,
+     "contactHours": 3,
+     "overview": "Differential Calculus (Functions, Limit and Continuity, Differentiability, Successive Differentiations & Leibniz Theorem, Mean Value Theorems, Tangents, Curvature, Partial Derivatives, Euler’s Theorem, Jacobian & Hessian) and Analytical Geometry (2D/3D Co-ordinate Systems, Pair of Straight Lines, Conics, Circles, Planes, Conicoids & Sphere).",
+     "books": {
+      "professor": [
+       "Calculus and Analytical Geometry by H. Anton",
+       "Co-ordinate Geometry and Vector Analysis by Rahman and Bhattacharjee"
+      ],
+      "syllabus": [
+       "Analytic Geometry of Conic Sections by E. H. Askwith",
+       "Calculus and Analytic Geometry by G. B. Thomas and R. L. Finney",
+       "Differential Calculus by J. Edwards",
+       "Advanced Calculus by M. R. Spiegel",
+       "Calculus by F. Ayres"
+      ]
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Functions, Limit and Continuity",
+       "summary": "1.1 Functions: kinds (polynomial, rational, transcendental, even, odd, periodic), Domain, range, inverse function and graphs of standard functions. 1.2 Limit and continuity: epsilon-delta definition and geometric interpretations.",
+       "minutes": 75,
+       "updated": "October 2026",
+       "file": "module-01-functions-limit-and-continuity.html",
+       "blocks": 7
+      },
+      {
+       "n": 2,
+       "label": "Module 02",
+       "title": "Differentiability, Successive Differentiations and Leibniz Theorem",
+       "summary": "2.1 Differentiability: Elementary properties, geometric interpretation, Absolute maxima and minima. 2.2 Successive differentiations and Leibniz theorem.",
+       "minutes": 65,
+       "updated": "October 2026",
+       "file": "module-02-differentiability-successive.html",
+       "blocks": 5
+      },
+      {
+       "n": 3,
+       "label": "Module 03",
+       "title": "Mean Value Theorems, Series Expansion and Maxima/Minima",
+       "summary": "3.1 Rolle's Theorem, Mean value Theorem, Taylor's and Maclaurin's Theorems, approximation of a function by polynomials and series, indeterminate forms and L'Hospital's rule. 3.2 Application of derivative for curve tracing, maxima and minima of functions of a single variable.",
+       "minutes": 75,
+       "updated": "October 2026",
+       "file": "module-03-mean-value-theorems-series-expansion-and.html",
+       "blocks": 5
+      },
+      {
+       "n": 4,
+       "label": "Module 04",
+       "title": "Tangent, Normal, Curvature and Functions of Double Variables",
+       "summary": "4.1 Tangent, normal, Asymptote, curvature. 4.2 Function of double variables, domain, continuity, partial derivatives and total derivative, Euler's Theorem, Jacobian and Hessian.",
+       "minutes": 75,
+       "updated": "October 2026",
+       "file": "module-04-tangent-normal-curvature-and-functions-of.html",
+       "blocks": 5
+      },
+      {
+       "n": 5,
+       "label": "Module 05",
+       "title": "Co-ordinate Systems and Pair of Straight Lines",
+       "summary": "1.1 Co-ordinate systems: Cartesian co-ordinates, Polar co-ordinates, Parameters, Standard Equations in different co-ordinates systems and their parametric representations, Transformation of co-ordinates. 1.2 Pair of straight lines: Condition for a general equation of 2nd degree in two variables to represent pair of straight lines, Properties of pair of straight lines.",
+       "minutes": 65,
+       "updated": "October 2026",
+       "file": "module-05-co-ordinate-systems-and-pair-of-straight.html",
+       "blocks": 5
+      },
+      {
+       "n": 6,
+       "label": "Module 06",
+       "title": "Conics and System of Circles",
+       "summary": "2.1 Conics: The general equation of 2nd degree in two variables and reduction to standard forms, identification of conics, Parabola, Ellipse and Hyperbola: Derivation of standard forms and properties. 2.2 System of circles: Circles and system of circles, General properties, Orthogonality of two circles, limiting circle, radical axis, co-axial circles.",
+       "minutes": 70,
+       "updated": "October 2026",
+       "file": "module-06-conics-and-system-of-circles.html",
+       "blocks": 5
+      },
+      {
+       "n": 7,
+       "label": "Module 07",
+       "title": "3D Co-ordinate Systems, Planes and Straight Lines",
+       "summary": "3.1 Co-ordinate systems: Cartesian, Cylindrical and Spherical systems, Direction cosines and direction ratios, Projection, Angle between two lines. 3.2 Planes and Straight lines: Planes, different form of planes and conversions, angle between two planes, Lines, different form of lines and conversions, angle between two lines, angle between a line and a plane, Plane containing a line, plane containing two lines, shortest distance between two lines.",
+       "minutes": 70,
+       "updated": "October 2026",
+       "file": "module-07-3d-co-ordinate-systems-planes-and-straight.html",
+       "blocks": 5
+      },
+      {
+       "n": 8,
+       "label": "Module 08",
+       "title": "Conicoids and Sphere",
+       "summary": "4.1 The general equations of second degree and reduction to standard forms, identification of conicoids, cone, Generators, condition for a general equation of second degree to represent Cylinder or Cone, right circular cone, right circular Cylinder. 4.2 Sphere: Equation of sphere, a plane and a sphere, a line and a sphere, plane of contact, tangent planes, polar planes, angle of intersections of two spheres, condition of orthogonality, radical line, plane and centers, co-axial spheres.",
+       "minutes": 70,
+       "updated": "October 2026",
+       "file": "module-08-conicoids-and-sphere.html",
+       "blocks": 5
       }
      ]
     },
     {
      "id": "chem1101",
+     "code": "CHEM1101",
      "title": "Physical and Inorganic Chemistry",
      "type": "Theory",
-     "credits": 3.0,
-     "topics": []
+     "credits": 3,
+     "contactHours": 3,
+     "overview": "Electrochemistry, Electrochemical Cells, Chemical Equilibrium, Chemical kinetics, Solution and Colloid, Atomic Structure, Periodic Classification of Elements, Electronic Theory of Valence and Chemical Bonding, and Chemistry of Transition Elements, Lanthanides and Actinides.",
+     "books": {
+      "professor": [
+       "Modern Inorganic Chemistry by R. D. Madan"
+      ],
+      "syllabus": [
+       "Principles of Physical Chemistry by M. M. Haque and M. A. Nawab",
+       "Fundamental Concepts in Inorganic Chemistry by Esmarch S. Gilreath",
+       "Physical Chemistry by G. M. Barrow",
+       "Physical Chemistry by W. J. Moore",
+       "Physical Chemistry by Keith J. Laidler, John H. Meiser",
+       "Elementary Physical Chemistry by S. R. Palit",
+       "Modern Inorganic Chemistry by S. Z. Haider",
+       "Chemical Bonding by Audrey L. Companion",
+       "Basic Inorganic Chemistry by F. Albert Cotton, G. Wilkinson, P. L. Gaus",
+       "Electronic Structure and Chemical Bonding by Donald K. Sebera"
+      ]
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Electrochemistry",
+       "summary": "Conductors, Electrolytes and Electrolysis, Faraday's Laws of Electrolysis, Electrolytic Conductance, Theories for Electrolytic Conductance, Ionic Mobility, Kohlrausch's Law, Transference Number.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 2,
+       "label": "Module 02",
+       "title": "Electrochemical Cells (Electrolytic and Galvanic/Voltaic)",
+       "summary": "Electrode Reaction and Potentials, Reference Electrode, Reversible and Concentration Cells.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 3,
+       "label": "Module 03",
+       "title": "Chemical Equilibrium",
+       "summary": "Reversible and Irreversible Reaction, Chemical Equilibrium and its Dynamic Nature, Characteristics, Laws of Mass Action and Equilibrium Constant Kc, Kp and Kx, Le-Chatelier's Principles and Applications.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 4,
+       "label": "Module 04",
+       "title": "Chemical Kinetics",
+       "summary": "Rate of Chemical Reaction, Order and Molecularity of Reactions, Different Types of Rate Expressions, Methods of Determining Rate and Order, Effect of Temperature on Reaction Rate and Energy of Activation.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 5,
+       "label": "Module 05",
+       "title": "Solution and Colloid",
+       "summary": "Different Types of Solution, Concentration Units, Colloid and Colloidal Solution-Classification, Preparation, Purification, Properties, Protective Action and Application of Colloids.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 6,
+       "label": "Module 06",
+       "title": "Atomic Structure",
+       "summary": "Dalton's Atomic Theory, Fundamental Particles, Elementary Ideas on Rutherford Atom Model and Bohr Atom Model, Quantum Numbers, Shape of Atomic Orbitals, Pauli's Exclusion Principle, Electronic Configuration of Elements.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 7,
+       "label": "Module 07",
+       "title": "Periodic Classification of Elements",
+       "summary": "Modern Periodic Table, Periodic Classification of Elements, Correlation of Periodic Classification of Elements with Electronic Configuration, Investigation on Some Periodic Properties, Atomic and Ionic Radius, Ionization Potential, Electron Affinity and Electronegativity.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 8,
+       "label": "Module 08",
+       "title": "Electronic Theory of Valence and Chemical Bonding",
+       "summary": "Different Types of Chemical Bonds (Ionic, Covalent, Co-ordinate, Hydrogen and Metallic), Classification of Solids on the Basis of Bonding and their Properties, Hybridization of Atomic Orbitals and Shapes of Molecules, Molecular Orbitals, Bond Length and Bond Strength.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      },
+      {
+       "n": 9,
+       "label": "Module 09",
+       "title": "Chemistry of Transition Elements, Lanthanides and Actinides",
+       "summary": "Definitions, Electronic Configurations, Preparation (Nuclear Transformation), General Properties.",
+       "minutes": 25,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
     },
     {
      "id": "eece1100",
+     "code": "EECE1100",
      "title": "Viva-voce",
-     "type": "Viva",
+     "type": "Sessional",
      "credits": 0.75,
-     "topics": []
+     "contactHours": 0,
+     "overview": "Comprehensive oral examination (Viva-voce) covering all 1st Year 1st Semester coursework.",
+     "books": {
+      "professor": [],
+      "syllabus": []
+     },
+     "topics": [
+      {
+       "n": 1,
+       "label": "Module 01",
+       "title": "Viva-voce Examination",
+       "summary": "Oral assessment of fundamental concepts across 1st Year 1st Semester courses.",
+       "minutes": 15,
+       "updated": "October 2026",
+       "file": null,
+       "blocks": 0
+      }
+     ]
     }
    ]
   },
   {
    "id": "eece12",
+   "code": "EECE12",
    "year": 1,
    "semester": 2,
+   "title": "1st Year · 2nd Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece21",
+   "code": "EECE21",
    "year": 2,
    "semester": 1,
+   "title": "2nd Year · 1st Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece22",
+   "code": "EECE22",
    "year": 2,
    "semester": 2,
+   "title": "2nd Year · 2nd Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece31",
+   "code": "EECE31",
    "year": 3,
    "semester": 1,
+   "title": "3rd Year · 1st Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece32",
+   "code": "EECE32",
    "year": 3,
    "semester": 2,
+   "title": "3rd Year · 2nd Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece41",
+   "code": "EECE41",
    "year": 4,
    "semester": 1,
+   "title": "4th Year · 1st Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   },
   {
    "id": "eece42",
+   "code": "EECE42",
    "year": 4,
    "semester": 2,
+   "title": "4th Year · 2nd Semester",
+   "subtitle": "No courses added yet",
+   "credits": 0,
+   "routine": null,
    "courses": []
   }
  ]

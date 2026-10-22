@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EECE1111 · Module 03 — Techniques for Circuit Analysis</title>
+<meta name="description" content="Nodal and mesh analysis including supernode, supermesh. Techniques of General DC/AC Circuit Analysis (Containing both independent and dependent sources) Node-voltage method, Mesh-current method, Source Transformations.">
+<link rel="stylesheet" href="../../assets/style.css"><script defer src="../../assets/site.js"></script></head>
+<body data-root="../.."><main class="container">
+<h1>Techniques for Circuit Analysis</h1>
+<p class="eyebrow">EECE1111 · Module 03 · about 40 min · Last updated October 2026</p>
+<p>Nodal and mesh analysis including supernode, supermesh. Techniques of General \(\frac{DC}{AC}\) Circuit Analysis (Containing both independent and dependent sources) Node-voltage method, Mesh-current method, Source Transformations.</p>
+<figure class="figure"><svg class="fig" viewBox="0 0 420 180" role="img" aria-label="Two-mesh circuit"><path class="s" d="M60 40H340V140H60ZM200 40V140"/><rect class="bx" x="105" y="30" width="44" height="20" rx="3"/><text x="127" y="44" text-anchor="middle" class="">R₁</text><rect class="bx" x="255" y="30" width="44" height="20" rx="3"/><text x="277" y="44" text-anchor="middle" class="">R₂</text><rect class="bx" x="188" y="78" width="24" height="24" rx="3"/><text x="200" y="94" text-anchor="middle" class="">R₃</text><circle class="bx" cx="60" cy="90" r="13"/><text x="60" y="94" text-anchor="middle" class="">+</text><circle class="bx" cx="340" cy="90" r="13"/><text x="340" y="94" text-anchor="middle" class="">+</text><text x="120" y="95" text-anchor="middle" class="">I₁ ↻</text><text x="272" y="95" text-anchor="middle" class="">I₂ ↻</text><text x="34" y="94" text-anchor="middle" class="">V₁</text><text x="372" y="94" text-anchor="middle" class="">V₂</text></svg><figcaption>Mesh analysis writes KVL around each loop; nodal analysis writes KCL at each node.</figcaption></figure>
+<p class="legend"><span class="tier t1">P1 Class Note</span><span class="tier t2">P2 Previous Year Question</span><span class="tier t3">P3 Professor-Followed Book</span><span class="tier t4">P4 Syllabus Book</span></p>
+<h2>Supernode &amp; Supermesh Constraint Equations</h2>
+<div class="definition">
+<p class="meta"><span class="tier t1">P1 · Class Note</span> · Definition &amp; Law · Class Note · Lecture 07 (Professor’s Supernode &amp; Supermesh Rules)</p>
+<p><b>A Supernode encloses a floating voltage source between two non-reference nodes; a Supermesh bypasses a current source shared by two adjacent meshes.</b></p>
+<p>When a voltage source (independent or dependent) is connected between two non-reference nodes, the current through that voltage source is unknown, preventing a standalone KCL equation at either node. Enclose both nodes and the voltage source inside a dashed surface called a Supernode.</p>
+<p>Similarly, when a current source lies on the boundary shared by two meshes, exclude the shared branch to form a single outer KVL loop (Supermesh), and write the current source relation at the shared branch.</p>
+<table><caption>Table 3.1 — Comparison of Supernode vs. Supermesh Formulations</caption><thead><tr><th>Feature</th><th>Supernode (Nodal Analysis)</th><th>Supermesh (Mesh Analysis)</th></tr></thead><tbody><tr><td>Triggering Element</td><td>Voltage source between two non-reference nodes</td><td>Current source shared between two meshes</td></tr><tr><td>Equation 1 (Conservation)</td><td>Apply KCL across the outer Supernode boundary</td><td>Apply KVL around the combined outer Supermesh perimeter</td></tr><tr><td>Equation 2 (Constraint)</td><td>Apply KVL inside the Supernode: \(v_{p}lus - v_{\min}us = V_{s}ource\)</td><td>Apply KCL at the shared branch: \(i_{m}esh2 - i_{m}esh1 = I_{s}ource\)</td></tr></tbody></table>
+<p class="tip"><b>Class tip:</b> Each Supernode reduces the number of required KCL equations by 1 (replaced by 1 simple voltage constraint equation). Never write KCL at an individual node inside a Supernode alone!</p>
+</div>
+
+<h2>Nodal Analysis with a Floating Supernode &amp; Dependent Source</h2>
+<div class="pyq">
+<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Previous Year Question · Previous Year Question · Final Exam 2023 Q3(b) &amp; 2021 Q3(a) · <b class="asked">Asked in: 2023, 2021 (7 Marks)</b></p>
+<p><b>Solve for node voltages \(v_{1}\) and \(v_{2}\) when a 10 V source connects Node 1 and Node 2.</b></p>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>In a two-node circuit with reference ground at the bottom, an independent current source of 2 A enters Node \(1, a 2 \Omega \) resistor connects Node 1 to ground, \(a 4 \Omega \) resistor connects Node 2 to ground, \(a 10 \Omega \) resistor lies in parallel with a 10 V voltage source (+ terminal at Node 1, − terminal at Node 2), and a 7 A current source leaves Node 2. Find node voltages \(v_{1}\) and \(v_{2}\).</p><p class="lbl">Given parameters</p><ul><li>Current entering Node \(1: I_{in} = 2 A\); Current leaving Node \(2: I_{out} = 7 A\)</li><li>Shunt resistors to ground: \(R_{1} = 2 \Omega \) (at Node \(1), R_{2} = 4 \Omega \) (at Node 2)</li><li>Supernode voltage source: \(v_{1} - v_{2} = 10 V\)</li></ul></div>
+<div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Discard the \(10 \Omega \) resistor in parallel with the ideal 10 V source during Supernode KCL</b><p><small>Any resistor connected strictly between the two nodes of a Supernode has its current both leaving and re-entering the same Supernode surface, canceling out in KCL:</small></p><div class="work"><p>\(\sum  i_{e}ntering = \sum  i_{l}eaving\)</p><p>\(\implies   2 = (\frac{v_{1}}{2}) + (\frac{v_{2}}{4}) + 7\)</p></div></div><div class="step"><b>Step 2: Simplify the Supernode KCL equation</b><p><small>Multiply through by 4 to clear fractions:</small></p><div class="work"><p>\(2v_{1} + v_{2} = -20\)   (Equation 1)</p></div></div><div class="step"><b>Step 3: Apply the Supernode voltage constraint and solve</b><p><small>Substitute \(v_{1} = v_{2} + 10\) into Equation 1:</small></p><div class="work"><p>\(2(v_{2} + 10) + v_{2} = -20\)</p><p>\(\implies   3v_{2} = -40\)</p><p>\(\implies   v_{2} = -13.33 V\)</p><p>\(v_{1} = -13.33 + 10\)</p><p>\(= -3.33 V\)</p><p class="answer">∴ \(v_{1} = -3.33 V,  v_{2} = -13.33 V\)</p></div></div></div>
+</div>
+
+<h2>Source Transformation &amp; Nodal/Mesh Equations by Inspection</h2>
+<div class="theory">
+<p class="meta"><span class="tier t3">P3 · Professor-Followed Book</span> · Core Theory &amp; Concept · Professor-Followed Book · Alexander &amp; Sadiku (6th Ed.), Ch. 3 &amp; Ch. 4</p>
+<p><b>A practical voltage source \(V_{s}\) in series with \(R\) converts to an equivalent current source \(I_{s} = \frac{V_{s}}{R}\) in parallel with \(R\).</b></p>
+<p>Source Transformation replaces a voltage source \(v_{s}\) in series with a resistor \(R\) by a current source \(i_{s} = \frac{v_{s}}{R}\) in parallel with the same resistor \(R\) (or vice versa), preserving terminal \(v-i\) characteristics.</p>
+<p>When a linear resistive network contains no dependent sources, the Nodal Conductance Matrix \([G][v] = [i]\) and Mesh Resistance Matrix \([R][i] = [v]\) are symmetric and can be written directly by inspection.</p>
+<div class="eq"><b>Source Transformation Equivalence</b> <small>(Applies to both independent and dependent sources)</small><br><span class="boxed">\(v_{s} = i_{s} \cdot  R   ⟺   i_{s} = \frac{v_{s}}{R}\)</span></div>
+</div>
+
+<h2>Cramer’s Rule Solution for 2-Mesh Network with Dependent CCVS</h2>
+<div class="example">
+<p class="meta"><span class="tier t4">P4 · Syllabus Book</span> · Worked Numerical Example · Syllabus Book · R. C. Dorf &amp; J. A. Svoboda (Introduction to Electric Circuits, Ch. 4)</p>
+<p><b>Move all dependent source terms involving mesh currents to the left-hand resistance matrix before applying Cramer’s Rule.</b></p>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>A two-mesh circuit has Mesh 1 with a 20 V source, \(a 2 \Omega \) series resistor, and a shared \(4 \Omega \) resistor with Mesh 2. Mesh 2 contains the shared \(4 \Omega \) resistor, \(a 6 \Omega \) resistor, and a dependent voltage source \(2i_{1}\) opposing \(i_{2}\). Find mesh currents \(i_{1}\) and \(i_{2}\).</p></div>
+<div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Write KVL for Mesh 1 and Mesh 2</b><p><small>Group coefficients of \(i_{1}\) and \(i_{2}\):</small></p><div class="work"><p>Mesh \(1:  6i_{1} - 4i_{2} = 20\)</p><p>Mesh \(2:  -2i_{1} + 10i_{2} = 0\)</p><p>\(\implies   i_{1} = 5i_{2}\)</p><p>Substituting \(i_{1} = 5i_{2}\) into Mesh 1:</p><p>\(6(5i_{2}) - 4i_{2} = 20\)</p><p>\(\implies   26i_{2} = 20\)</p><p class="answer">∴ \(i_{2} = \frac{10}{13} \approx  0.77 A,   i_{1} = \frac{50}{13} \approx  3.85 A\)</p></div></div></div>
+</div>
+
+</main></body></html>

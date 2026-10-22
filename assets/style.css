@@ -58,3 +58,27 @@ a.card:hover{border-color:var(--accent);text-decoration:none}
 @media print{.topbar,.toc{display:none}:root,:root[data-theme=dark]{--bg:#fff;--card:#fff;--ink:#0f172a;--mute:#334155;--line:#cbd5e1;--def:#047857;--thy:#0369a1;--mem:#b45309;--ex:#6d28d9;--pyq:#be123c;--warn:#b91c1c}
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:10.5pt;background:#fff}.container{max-width:none;padding:0}h2,h3{break-after:avoid}table{display:table;break-inside:avoid}}
 @page{size:A4;margin:14mm}
+/* imported note blocks */
+.meta{margin:0 0 .5rem;font-size:.78rem;color:var(--mute)}.meta .asked{color:var(--pyq);font-family:var(--mono);font-weight:600}
+.tier{display:inline-block;padding:.05rem .5rem;border-radius:99px;border:1px solid currentColor;font:600 .7rem var(--mono)}
+.t1{color:#b45309}.t2{color:#be123c}.t3{color:#0369a1}.t4{color:#047857}
+:root[data-theme=dark] .t1{color:#fbbf24}:root[data-theme=dark] .t2{color:#fb7185}:root[data-theme=dark] .t3{color:#38bdf8}:root[data-theme=dark] .t4{color:#34d399}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .t1{color:#fbbf24}:root:not([data-theme=light]) .t2{color:#fb7185}:root:not([data-theme=light]) .t3{color:#38bdf8}:root:not([data-theme=light]) .t4{color:#34d399}}
+p.legend{display:flex;flex-wrap:wrap;gap:.5rem}
+.eq{margin:.9rem 0}.boxed{display:inline-block;margin-top:.25rem;padding:.4rem .9rem;border:2px solid var(--ink);border-radius:6px;font-weight:600}
+.problem,.solution{margin:1rem 0;padding:.8rem 1rem;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--accent-soft) 35%,transparent)}
+.lbl{display:block;font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.step{margin:.9rem 0 0}.work{margin:.4rem 0 0 .8rem;padding:.5rem .9rem;border-left:4px solid var(--accent);background:var(--card);border-radius:0 8px 8px 0;overflow-x:auto}.work p{margin:.3rem 0}
+.tip{margin-top:.8rem;padding:.5rem .8rem;border-radius:8px;background:var(--accent-soft)}
+caption{caption-side:top;text-align:left;padding:.5rem .75rem;font-size:.85rem;color:var(--mute)}
+.sub{color:var(--mute);margin:.2rem 0 1rem}.books li{margin:.15rem 0;font-size:.92rem}
+/* figures */
+.figure{margin:1.2rem 0;text-align:center}.figure figcaption{margin-top:.3rem;font-size:.82rem;color:var(--mute)}
+.fig{max-width:460px}.fig .s{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fig .a{stroke:var(--accent);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.fig .m{stroke:var(--mute);fill:none;stroke-width:1.3;stroke-dasharray:4 3}
+.fig .bx{fill:var(--card);stroke:currentColor;stroke-width:2}.fig .k{fill:currentColor;stroke:none}
+.fig text{fill:currentColor;font:600 13px var(--sans);stroke:none}.fig text.t2{fill:var(--mute);font-weight:500;font-size:12px}
+/* PDF is always light, whatever the on-screen theme */
+@media print{:root,:root[data-theme=dark],:root:not([data-theme=light]){--bg:#fff!important;--card:#fff!important;--ink:#0f172a!important;--mute:#334155!important;--line:#cbd5e1!important;--accent:#0369a1!important;--accent-soft:#e0f2fe!important;--def:#047857!important;--thy:#0369a1!important;--mem:#b45309!important;--ex:#6d28d9!important;--pyq:#be123c!important;--warn:#b91c1c!important;--star:#b45309!important}
+html,body{background:#fff!important;color:#0f172a!important}.t1{color:#b45309!important}.t2{color:#be123c!important}.t3{color:#0369a1!important}.t4{color:#047857!important}.fig .bx{fill:#fff}}

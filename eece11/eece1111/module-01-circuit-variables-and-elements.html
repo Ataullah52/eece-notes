@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EECE1111 · Module 01 — Circuit Variables and Elements</title>
+<meta name="description" content="Voltage, current, power, energy, independent and dependent sources, resistance, inductance and capacitance. Introduce to non-sinusoidal wave, calculation of RMS and average value for non-sinusoidal waveforms.">
+<link rel="stylesheet" href="../../assets/style.css"><script defer src="../../assets/site.js"></script></head>
+<body data-root="../.."><main class="container">
+<h1>Circuit Variables and Elements</h1>
+<p class="eyebrow">EECE1111 · Module 01 · about 35 min · Last updated October 2026</p>
+<p>Voltage, current, power, energy, independent and dependent sources, resistance, inductance and capacitance. Introduce to non-sinusoidal wave, calculation of RMS and average value for non-sinusoidal waveforms.</p>
+<figure class="figure"><svg class="fig" viewBox="0 0 420 180" role="img" aria-label="Passive sign convention for a resistor"><path class="s" d="M60 90H160L170 70L190 110L210 70L230 110L250 70L260 90H330"/><path class="s" d="M95 58H140"/><polygon class="k" points="130,52 142,58 130,64"/><text x="118" y="46" text-anchor="middle" class="">i</text><text x="150" y="128" text-anchor="middle" class="">+</text><text x="272" y="128" text-anchor="middle" class="">−</text><path class="m" d="M162 142H258"/><text x="210" y="164" text-anchor="middle" class="">v</text><text x="210" y="62" text-anchor="middle" class="t2">R</text><circle class="k" cx="60" cy="90" r="4"/><circle class="k" cx="330" cy="90" r="4"/></svg><figcaption>Passive sign convention: current enters the + terminal, so p = vi is power absorbed.</figcaption></figure>
+<p class="legend"><span class="tier t1">P1 Class Note</span><span class="tier t2">P2 Previous Year Question</span><span class="tier t3">P3 Professor-Followed Book</span><span class="tier t4">P4 Syllabus Book</span></p>
+<h2>Passive Sign Convention (PSC) &amp; Power Direction Criterion</h2>
+<div class="theory">
+<p class="meta"><span class="tier t1">P1 · Class Note</span> · Core Theory &amp; Concept · Class Note · Lecture 01 &amp; 02 (Professor Board Emphasis)</p>
+<p><b>Whenever reference current \(i\) enters the positive (+) voltage terminal, use \(p = +vi\). If current enters the negative (−) terminal, use \(p = -vi\).</b></p>
+<p>In circuit analysis, assigning power as absorbed or supplied requires inspecting the relative orientation of the voltage polarity (+ / −) and the current arrow before substituting signed numbers.</p>
+<p>Under the Passive Sign Convention (PSC), if the current arrow enters the positive (+) terminal of an element, calculate instantaneous power as \(p = +v \cdot  i\). Conversely, if the current arrow enters the negative (−) terminal (leaves the positive terminal), negate the expression to \(p = -v \cdot  i\).</p>
+<ul><li>Result \(p &gt; 0 W\): The element is absorbing (consuming) electric power — behaves as a passive load or resistor.</li><li>Result \(p &lt; 0 W\): The element is supplying (delivering) electric power to the circuit — behaves as an active source.</li><li>Conservation of Power Check: In any isolated circuit at any instant \(t\), the algebraic sum of power across all elements is strictly zero \((\sum  p = 0)\).</li></ul>
+<div class="eq"><b>Current Entering + Terminal</b> <small>(Watts \((W = \frac{J}{s})\))</small><br><span class="boxed">\(p(t) = +v(t) \cdot  i(t)\)</span><br><small>Standard Passive Sign Convention orientation</small></div>
+<div class="eq"><b>Current Leaving + Terminal</b> <small>(Watts (W))</small><br><span class="boxed">\(p(t) = -v(t) \cdot  i(t)\)</span><br><small>Active generator orientation</small></div>
+<div class="eq"><b>Total Circuit Power Balance</b> <small>(Watts (W))</small><br><span class="boxed">\(\sum  p_{a}bsorbed = \sum  p_{s}upplied   &lt;=&gt;   \sum  p_{k} = 0\)</span><br><small>Mandatory verification check in exam problems</small></div>
+<p class="tip"><b>Class tip:</b> In semester exams, always write two explicit steps: (1) identify whether current enters the + or − terminal to fix the formula sign, and (2) substitute the numerical signs of \(v\) and \(i\) inside parentheses.</p>
+</div>
+
+<h2>Fundamental Definitions: Electric Charge, Current, Voltage &amp; Energy</h2>
+<div class="definition">
+<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Definition &amp; Law · Previous Year Question · Final Exam 2023 Q1(a), 2021 Q1(a), 2019 Q1(b) · <b class="asked">Asked in: 2023, 2021, 2019 (4 Marks)</b></p>
+<p><b>Formal mathematical definitions of charge \(q\), current \(i = \frac{dq}{dt}\), voltage \(v_{a}b = \frac{dw}{dq}\), and energy \(w = \int  p dt\).</b></p>
+<p>Electric Charge (q) is the fundamental electrical property of atomic matter, measured in Coulombs (C). One electron carries a negative charge of \(-1.602 \times  10^{-19} C\), meaning 1 C equals the charge of \(6.24 \times  10^{18}\) electrons.</p>
+<p>Electric Current (i) is the time rate of change of charge passing through a specified cross-sectional area, measured in Amperes (A). Voltage or Potential Difference \((v_{a}b)\) between node a and node \(b\) is the energy (work) required to move a unit positive charge (+1 C) from terminal b (−) to terminal a (+).</p>
+<div class="eq"><b>Instantaneous Current</b> <small>(\(1 A = 1 \frac{C}{s}\))</small><br><span class="boxed">\(i(t) = \frac{dq(t)}{dt}\)</span></div>
+<div class="eq"><b>Net Charge Transferred</b> <small>(Coulombs (C))</small><br><span class="boxed">\(q(t) = \int  [t0\) to \(t] i(\tau ) d\tau  + q(t0\))</span></div>
+<div class="eq"><b>Voltage (Potential Difference)</b> <small>(\(1 V = 1 \frac{J}{C} = 1 \frac{N\cdot m}{C}\))</small><br><span class="boxed">\(v_{ab} = \frac{dw}{dq}\)</span></div>
+<div class="eq"><b>Instantaneous Power via Chain Rule</b> <small>(\(1 W = 1 \frac{J}{s}\))</small><br><span class="boxed">\(p = \frac{dw}{dt} = (\frac{dw}{dq}) \cdot  (\frac{dq}{dt}) = v \cdot  i\)</span></div>
+</div>
+
+<h2>Sign Matrix for Power &amp; Dependent Source Classification</h2>
+<div class="memorize">
+<p class="meta"><span class="tier t1">P1 · Class Note</span> · Memorize &amp; Quick Recall · Class Note · Lecture 02 Summary Sheet</p>
+<p><b>Quick-reference lookup table for all four terminal-polarity combinations and the four linear dependent source types.</b></p>
+<p>Commit both the four-case Passive Sign Convention truth table and the four dependent source symbols (VCVS, CCVS, VCCS, CCCS) to memory for rapid problem setup.</p>
+<table><caption>Table 1.1 — Complete Four-Case Power Sign Matrix &amp; Dependent Source Parameters</caption><thead><tr><th>Terminal Entry of Current \(i\)</th><th>Values of \(v\) and \(i\)</th><th>Formula &amp; Sign of \(p\)</th><th>Physical Interpretation</th></tr></thead><tbody><tr><td>Enters + terminal</td><td>\(v = +10 V, i = +3 A\)</td><td>\(p = +(+10)(+3) = +30 W\)</td><td>Absorbing 30 W (Load)</td></tr><tr><td>Enters + terminal</td><td>\(v = +10 V, i = -3 A\)</td><td>\(p = +(+10)(-3) = -30 W\)</td><td>Supplying 30 W (Source)</td></tr><tr><td>Enters − terminal (Leaves +)</td><td>\(v = +10 V, i = +3 A\)</td><td>\(p = -(+10)(+3) = -30 W\)</td><td>Supplying 30 W (Source)</td></tr><tr><td>Enters − terminal (Leaves +)</td><td>\(v = -10 V, i = +3 A\)</td><td>\(p = -(-10)(+3) = +30 W\)</td><td>Absorbing 30 W (Load)</td></tr></tbody></table>
+</div>
+
+<h2>Time-Varying Charge Waveform &amp; Instantaneous Power Delivered</h2>
+<div class="example">
+<p class="meta"><span class="tier t1">P1 · Class Note</span> · Worked Numerical Example · Class Note · Lecture 03 Worked Problem (Professor Board Example)</p>
+<p><b>Given \(q(t) = 5t\cdot \sin(4\pi t) mC\) and \(v(t) = 2\cdot \cos(4\pi t) V\), determine \(i(t)\) and \(p(t)\) at \(t = 0.25 s\).</b></p>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>The total charge entering the positive terminal of a circuit element is given by \(q(t) = 5t \cdot  \sin(4\pi t) mC\), while the voltage across the element (with + at the entry terminal) is \(v(t) = 2 \cdot  \cos(4\pi t) V\). Calculate the current \(i(t)\) and the power absorbed at \(t = 0.25 s\).</p><p class="lbl">Given parameters</p><ul><li>\(q(t) = 5t \cdot  \sin(4\pi t) mC\)</li><li>\(v(t) = 2 \cdot  \cos(4\pi t) V\)</li><li>Evaluation time \(t = 0.25 s\) (Note: \(4\pi t\) is in radians)</li></ul></div>
+<div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Differentiate charge \(q(t)\) using the product rule</b><p><small>Since current enters the positive terminal, \(i(t) = \frac{dq}{dt}\):</small></p><div class="work"><p>\(i(t) = \frac{d}{dt} [5t \cdot  \sin(4\pi t)]\)</p><p>\(= 5 \cdot  \sin(4\pi t) + 20\pi t \cdot  \cos(4\pi t)  mA\)</p></div></div><div class="step"><b>Step 2: Evaluate \(i(t)\) and \(v(t)\) at \(t = 0.25 s\)</b><p><small>Substitute \(t = 0.25 s\) so that angle \(4\pi (0.25) = \pi \) rad (where \(\sin(\pi ) = 0\) and \(\cos(\pi ) = -1\)):</small></p><div class="work"><p>\(i(0.25) = 5\cdot \sin(\pi ) + 20\pi (0.25)\cdot \cos(\pi )\)</p><p>\(= 0 + 5\pi (-1)\)</p><p>\(= -15.708 mA\)</p><p>\(v(0.25) = 2 \cdot  \cos(\pi )\)</p><p>\(= -2.0 V\)</p></div></div><div class="step"><b>Step 3: Compute power p(0.25) using Passive Sign Convention</b><p><small>Because current enters the positive terminal, \(p = +v \cdot  i\):</small></p><div class="work"><p>\(p(0.25) = (-2.0 V) \times  (-15.708 mA)\)</p><p>\(= +31.42 mW\) (Absorbing)</p><p class="answer">∴ \(i(0.25 s) = -15.71 mA,  p(0.25 s) = +31.42 mW\) (Absorbed)</p></div></div></div>
+</div>
+
+<h2>Conservation of Power &amp; Unknown Dependent Source Current in a 5-Element Network</h2>
+<div class="pyq">
+<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Previous Year Question · Previous Year Question · Semester Final 2023 Q1(c) &amp; 2020 Q1(b) · <b class="asked">Asked in: 2023, 2020 (7 Marks)</b></p>
+<p><b>Calculate the power of each element in a 5-branch network and verify \(\sum  p = 0\) to find unknown current \(i_{x}\).</b></p>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>A closed 5-element DC network has measured branch powers: \(p1 = -205 W\) (Independent 25 V Source), \(p2 = +60 W\) (Resistor \(R1), p3 = +45 W\) (Resistor R2), and \(p4 = +30 W\) (Load Element). Element 5 is a Current-Controlled Voltage Source (CCVS) with terminal voltage \(v5 = 3.5 i_{x}\) (where \(i_{x} = 4 A\)) and branch current i5 entering its positive terminal. Find the branch current i5 and verify energy conservation.</p><p class="lbl">Given parameters</p><ul><li>\(p1 = -205 W, p2 = +60 W, p3 = +45 W, p4 = +30 W\)</li><li>Control current \(i_{x} = 4 A  =&gt;\)  Dependent voltage \(v5 = 3.5 \times  4 = 14 V\)</li></ul></div>
+<div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Apply Conservation of Power \((\sum  p_{k} = 0)\)</b><p><small>The algebraic sum of instantaneous power for all five elements must equal zero:</small></p><div class="work"><p>\(p1 + p2 + p3 + p4 + p5 = 0   =&gt;   -205 + 60 + 45 + 30 + p5\)</p><p>\(= 0\)</p></div></div><div class="step"><b>Step 2: Solve for p5</b><p><small>Isolate the power of the fifth element:</small></p><div class="work"><p>\(-70 + p5 = 0   =&gt;   p5\)</p><p>\(= +70 W\) (Absorbing Power)</p></div></div><div class="step"><b>Step 3: Determine branch current i5</b><p><small>Since i5 enters the positive terminal of Element \(5 (v5 = 14 V)\):</small></p><div class="work"><p>\(p5 = +v5 \cdot  i5   =&gt;   70\)</p><p>\(= 14 \cdot  i5   =&gt;   i5\)</p><p>\(= +5.0 A\)</p><p class="answer">∴ \(p5 = +70 W\) (Absorbed),  \(i5 = 5.0 A,  \sum  p = 0 W\) verified.</p></div></div></div>
+</div>
+
+<h2>RMS and Average Values for Non-Sinusoidal &amp; Periodic Waveforms</h2>
+<div class="theory">
+<p class="meta"><span class="tier t3">P3 · Professor-Followed Book</span> · Core Theory &amp; Concept · Professor-Followed Book · B. L. Theraja &amp; Alexander &amp; Sadiku Ch. 1</p>
+<p><b>For any periodic waveform \(x(t)\) with period \(T\): Average value \(X_{avg} = (\frac{1}{T}) \int  x(t) dt\) and Effective (RMS) value \(X_{rms} = \sqrt{(\frac{1}{T}) \int  x^{2}(t) dt}\).</b></p>
+<p>An alternating or non-sinusoidal periodic waveform \(x(t) = x(t + T)\) is characterized by its average (DC) component and its Root-Mean-Square (RMS or effective) value, which represents the equivalent DC value that delivers the same average power to a resistor.</p>
+<p>For a composite non-sinusoidal wave containing a DC term plus harmonics \(x(t) = X_{0} + X_{m1}\sin(\omega t) + X_{m2}\sin(2\omega t + \varphi _{2}) + \cdot \cdot \cdot \), the total RMS value is the square root of the sum of squares of the individual RMS components.</p>
+<div class="eq"><b>Full-Cycle Average (Mean) Value</b> <small>(\(V\) or \(A\))</small><br><span class="boxed">\(X_{avg} = (\frac{1}{T}) \int _{0}^{T} x(t) dt\)</span></div>
+<div class="eq"><b>Effective / Root-Mean-Square (RMS) Value</b> <small>(\(V\) or \(A\))</small><br><span class="boxed">\(X_{rms} = \sqrt{ (\frac{1}{T}) \int _{0}^{T} x^{2}(t) dt }\)</span></div>
+<div class="eq"><b>Multi-Harmonic Non-Sinusoidal RMS Value</b> <small>(Form Factor \(K_{f} = \frac{X_{rms}}{X_{avg}}\), Peak Factor \(K_{p} = \frac{X_{\max}}{X_{rms}}\))</small><br><span class="boxed">\(X_{rms} = \sqrt{ X_{0}^{2} + (\frac{X_{m1}}{\sqrt{2}})^{2} + (\frac{X_{m2}}{\sqrt{2}})^{2} + \cdot \cdot \cdot  }\)</span></div>
+</div>
+
+<h2>Worked RMS &amp; Average Value Calculation for Non-Sinusoidal Sawtooth &amp; Composite Waveforms</h2>
+<div class="example">
+<p class="meta"><span class="tier t4">P4 · Syllabus Book</span> · Worked Numerical Example · Syllabus Book · Robert L. Boylestad &amp; R. C. Dorf &amp; J. A. Svoboda</p>
+<p><b>For a periodic sawtooth wave \(v(t) = (\frac{V_{m}}{T})t\) on \([0, T], V_{avg} = \frac{V_{m}}{2}\) and \(V_{rms} = \frac{V_{m}}{\sqrt{3}}\).</b></p>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>(1) Derive the average value \(V_{avg}\) and effective (RMS) value \(V_{rms}\) of a periodic sawtooth voltage \(v(t) = (\frac{V_{m}}{T})t\) for \(0 \le  t &lt; T\).</p><p>(2) Calculate the total RMS current of \(i(t) = 3 + 4\sqrt{2} \sin(\omega t) + 3\sqrt{2} \cos(3\omega t) A\).</p></div>
+<div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>1. Sawtooth Waveform Average &amp; RMS Derivation</b><p><small>Integrate \(v(t)\) and \(v^{2}(t)\) over one period [0, T]:</small></p><div class="work"><p>\(V_{avg} = (\frac{1}{T}) \int _{0}^{T} (\frac{V_{m}}{T})t dt\)</p><p>\(= (\frac{V_{m}}{T^{2}}) [ \frac{t^{2}}{2} ]_{0}^{T}\)</p><p class="answer">∴ \(V_{avg} = \frac{V_{m}}{2} = 0.5 V_{m}\)</p><p>\(V_{rms} = \sqrt{ (\frac{1}{T}) \int _{0}^{T} (\frac{V_{m}^{2}}{T^{2}})t^{2} dt }\)</p><p>\(= \sqrt{ (\frac{V_{m}^{2}}{T^{3}}) (\frac{T^{3}}{3}) }\)</p><p class="answer">∴ \(V_{rms} = \frac{V_{m}}{\sqrt{3}} \approx  0.577 V_{m}\)</p></div></div><div class="step"><b>2. Multi-Harmonic RMS Current Calculation</b><p><small>Combine the DC term and the RMS values of each orthogonal harmonic:</small></p><div class="work"><p>\(I_{0} = 3 A,   I_{rms,1} = \frac{4\sqrt{2}}{\sqrt{2}}\)</p><p>\(= 4 A,   I_{rms,3} = \frac{3\sqrt{2}}{\sqrt{2}}\)</p><p>\(= 3 A\)</p><p>\(I_{rms} = \sqrt{I_{0}^{2} + I_{rms,1}^{2} + I_{rms,3}^{2}}\)</p><p>\(= \sqrt{3^{2} + 4^{2} + 3^{2}}\)</p><p class="answer">∴ \(I_{rms} = \sqrt{34} \approx  5.83 A\)</p></div></div></div>
+</div>
+
+</main></body></html>
