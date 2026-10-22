@@ -82,3 +82,11 @@ caption{caption-side:top;text-align:left;padding:.5rem .75rem;font-size:.85rem;c
 /* PDF is always light, whatever the on-screen theme */
 @media print{:root,:root[data-theme=dark],:root:not([data-theme=light]){--bg:#fff!important;--card:#fff!important;--ink:#0f172a!important;--mute:#334155!important;--line:#cbd5e1!important;--accent:#0369a1!important;--accent-soft:#e0f2fe!important;--def:#047857!important;--thy:#0369a1!important;--mem:#b45309!important;--ex:#6d28d9!important;--pyq:#be123c!important;--warn:#b91c1c!important;--star:#b45309!important}
 html,body{background:#fff!important;color:#0f172a!important}.t1{color:#b45309!important}.t2{color:#be123c!important}.t3{color:#0369a1!important}.t4{color:#047857!important}.fig .bx{fill:#fff}}
+/* priority stars + vertical note lists */
+.st{font:700 .78rem var(--mono);letter-spacing:.02em;white-space:nowrap}
+.legend .st{padding:.15rem .6rem;border:1px solid currentColor;border-radius:99px}
+.toc .st{margin-left:.3rem;font-size:.72rem}
+.meta .no{font-family:var(--mono);font-weight:600;color:var(--ink)}
+ul.lead li{font-weight:500}li.sub{list-style:none;margin-left:-.6rem}
+ul.note{margin:.3rem 0 0;padding-left:1.1rem;font-size:.82rem;color:var(--mute)}
+.boxed .fl{display:block;padding:.15rem 0}

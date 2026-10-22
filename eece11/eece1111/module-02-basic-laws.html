@@ -7,57 +7,56 @@
 <p class="eyebrow">EECE1111 · Module 02 · about 45 min · Last updated October 2026</p>
 <p>Ohm's law, Kirchhoff's current and voltage laws, Voltage divider and current divider rules, Delt-Wye equivalent circuits. Series, parallel and series-parallel circuits and their equivalents.</p>
 <figure class="figure"><svg class="fig" viewBox="0 0 420 180" role="img" aria-label="KCL at a node and KVL around a loop"><path class="s" d="M30 95H110M110 25V95M110 95H190"/><circle class="k" cx="110" cy="95" r="4"/><polygon class="k" points="68,89 80,95 68,101"/><polygon class="k" points="104,50 110,62 116,50"/><polygon class="k" points="148,89 160,95 148,101"/><text x="52" y="84" text-anchor="middle" class="">i₁</text><text x="128" y="54" text-anchor="middle" class="">i₂</text><text x="170" y="84" text-anchor="middle" class="">i₃</text><text x="110" y="150" text-anchor="middle" class="">Σ i in = Σ i out</text><rect class="s" x="250" y="35" width="130" height="95" rx="3"/><text x="315" y="28" text-anchor="middle" class="">v₁</text><text x="396" y="88" text-anchor="middle" class="">v₂</text><text x="315" y="150" text-anchor="middle" class="">v₃</text><text x="315" y="88" text-anchor="middle" class="">Σ v = 0</text></svg><figcaption>KCL: Σ i in = Σ i out at a node. KVL: Σ v = 0 around any closed loop.</figcaption></figure>
-<p class="legend"><span class="tier t1">P1 Class Note</span><span class="tier t2">P2 Previous Year Question</span><span class="tier t3">P3 Professor-Followed Book</span><span class="tier t4">P4 Syllabus Book</span></p>
-<h2>Ohm’s Law, Conductance &amp; Power Dissipation Characteristics</h2>
+<p class="legend"><span class="st t1">★★★★★ Class Note</span><span class="st t2">★★★★ Previous Year Question</span><span class="st t3">★★★ Professor-Followed Book</span><span class="st t4">★ Syllabus Book</span></p>
+<h2 data-stars="★★★★★" data-tier="1">Ohm’s Law, Conductance &amp; Power Dissipation Characteristics</h2>
 <div class="theory">
-<p class="meta"><span class="tier t1">P1 · Class Note</span> · Core Theory &amp; Concept · Class Note · Lecture 04 (Professor Board Derivation &amp; Curve Analysis)</p>
-<p><b>\(v = iR\) (under PSC), Conductance \(G = \frac{1}{R} = \frac{i}{v}\) (Siemens), and non-negative resistor power \(p = i^{2}R = \frac{v^{2}}{R} \ge  0\).</b></p>
-<p>Ohm’s Law states that the voltage \(v\) across a linear resistor is directly proportional to the current \(i\) flowing through it, provided the current enters the positive terminal \((v = +iR)\). If the reference current enters the negative terminal, \(v = -iR\).</p>
-<p>Conductance \(G\) is the reciprocal of resistance \((G = \frac{1}{R})\), measured in Siemens (S) or mhos (℧). Because a passive resistor cannot generate energy, its absorbed power \(p = i^{2}R = v^{2}G\) is always non-negative regardless of voltage or current polarity.</p>
+<p class="meta"><span class="st t1" title="Priority 1">★★★★★</span> <span class="no">01.</span> Core Theory &amp; Concept · Class Note · Lecture 04 (Professor Board Derivation &amp; Curve Analysis)</p>
+<ul class="lead"><li>\(v = iR\) (under PSC), Conductance \(G = \frac{1}{R} = \frac{i}{v}\) (Siemens), and non-negative resistor power \(p = i^{2}R = \frac{v^{2}}{R} \ge  0\).</li></ul>
+<ul><li>Ohm’s Law states that the voltage \(v\) across a linear resistor is directly proportional to the current \(i\) flowing through it, provided the current enters the positive terminal \((v = +iR)\).</li><li>If the reference current enters the negative terminal, \(v = -iR\).</li><li>Conductance \(G\) is the reciprocal of resistance \((G = \frac{1}{R})\), measured in Siemens (S) or mhos (℧).</li><li>Because a passive resistor cannot generate energy, its absorbed power \(p = i^{2}R = v^{2}G\) is always non-negative regardless of voltage or current polarity.</li></ul>
 <div class="eq"><b>Ohm’s Law (Voltage &amp; Current Forms)</b> <small>(\(V, A, \Omega , S\))</small><br><span class="boxed">\(v = i \cdot  R   ⟺   i = G \cdot  v = \frac{v}{R}\)</span></div>
 <div class="eq"><b>Resistor Power Dissipation</b> <small>(Watts \((W \ge  0)\))</small><br><span class="boxed">\(p = v \cdot  i = i^{2}R = \frac{v^{2}}{R} = v^{2}G = \frac{i^{2}}{G}\)</span></div>
 <p class="tip"><b>Class tip:</b> Remember the two extreme limits of resistance: a Short Circuit has \(R = 0 \Omega  (G \to  \infty  S)\), meaning \(v = 0 V\) for any finite current \(i\); an Open Circuit has \(R \to  \infty  \Omega  (G = 0 S)\), meaning \(i = 0\) A for any finite voltage \(v\).</p>
 </div>
 
-<h2>Kirchhoff’s Current Law (KCL) &amp; Kirchhoff’s Voltage Law (KVL)</h2>
+<h2 data-stars="★★★★★" data-tier="1">Kirchhoff’s Current Law (KCL) &amp; Kirchhoff’s Voltage Law (KVL)</h2>
 <div class="theory">
-<p class="meta"><span class="tier t1">P1 · Class Note</span> · Core Theory &amp; Concept · Class Note · Lecture 05 (Kirchhoff’s Laws &amp; Two-Loop T-Network)</p>
-<p><b>KCL (Conservation of Charge): \(\sum  i_{in} = \sum  i_{out}\) at any node. KVL (Conservation of Energy): \(\sum  v_{m} = 0\) around any closed path.</b></p>
-<p>Kirchhoff’s Current Law (KCL) is based on the conservation of electric charge: a node cannot store net charge, so the algebraic sum of currents entering a node (or closed Gaussian boundary) must equal zero at every instant.</p>
-<p>Kirchhoff’s Voltage Law (KVL) is based on the conservation of energy: the work done moving a unit charge around a complete closed loop returns to the same potential, so the algebraic sum of all branch voltages around any closed loop is identically zero.</p>
+<p class="meta"><span class="st t1" title="Priority 1">★★★★★</span> <span class="no">02.</span> Core Theory &amp; Concept · Class Note · Lecture 05 (Kirchhoff’s Laws &amp; Two-Loop T-Network)</p>
+<ul class="lead"><li>KCL (Conservation of Charge): \(\sum  i_{in} = \sum  i_{out}\) at any node.</li><li>KVL (Conservation of Energy): \(\sum  v_{m} = 0\) around any closed path.</li></ul>
+<ul><li>Kirchhoff’s Current Law (KCL) is based on the conservation of electric charge: a node cannot store net charge, so the algebraic sum of currents entering a node (or closed Gaussian boundary) must equal zero at every instant.</li><li>Kirchhoff’s Voltage Law (KVL) is based on the conservation of energy: the work done moving a unit charge around a complete closed loop returns to the same potential, so the algebraic sum of all branch voltages around any closed loop is identically zero.</li></ul>
 <div class="eq"><b>Kirchhoff’s Current Law (KCL)</b> <small>(Amperes (A))</small><br><span class="boxed">\(\sum _{n=1}^{N} i_{n} = 0   ⟺   \sum  i_{entering} = \sum  i_{leaving}\)</span></div>
 <div class="eq"><b>Kirchhoff’s Voltage Law (KVL)</b> <small>(Volts (V))</small><br><span class="boxed">\(\sum _{m=1}^{M} v_{m} = 0   ⟺   \sum  v_{drops} = \sum  v_{rises}\)</span></div>
 <div class="eq"><b>Fundamental Theorem of Network Topology</b> <small>(\(b =\) branches, \(l =\) independent loops, \(n =\) nodes)</small><br><span class="boxed">\(b = l + n - 1\)</span></div>
 </div>
 
-<h2>Voltage Divider, Current Divider &amp; Wye-Delta \((Y-\Delta )\) Conversion Formulas</h2>
+<h2 data-stars="★★★★★" data-tier="2">Voltage Divider, Current Divider &amp; Wye-Delta \((Y-\Delta )\) Conversion Formulas</h2>
 <div class="memorize">
-<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Memorize &amp; Quick Recall · Previous Year Question · Final Exam 2023 Q2(a), 2022 Q2(b), 2019 Q2(a) · <b class="asked">Asked in: 2023, 2022, 2019</b></p>
-<p><b>Complete formula sheet for two-resistor dividers and \(\Delta  ↔ Y\) bridge conversions.</b></p>
-<p>When a bridge network (such as a Wheatstone bridge) has neither series nor parallel resistor pairs, apply a Delta-to-Wye \((\Delta  \to  Y)\) or Wye-to-Delta \((Y \to  \Delta )\) transformation to collapse the network.</p>
+<p class="meta"><span class="st t2" title="Priority 2">★★★★★</span> <span class="no">03.</span> Definition, Law &amp; Formula</p>
 <table><caption>Table 2.1 — Divider Rules &amp; Wye-Delta \((Y ↔ \Delta )\) Equivalent Transformations</caption><thead><tr><th>Transformation / Rule</th><th>Governing Equation</th><th>Balanced Case (Equal \(R\))</th></tr></thead><tbody><tr><td>Voltage Divider (Series \(R_{1}, R_{2}\))</td><td>\(v_{1} = [\frac{R_{1}}{R_{1} + R_{2}}] \cdot  v_{t}otal\)</td><td>\(v_{1} = v_{2} = 0.5 \cdot  v_{t}otal\)</td></tr><tr><td>Current Divider (Parallel \(R_{1}, R_{2}\))</td><td>\(i_{1} = [\frac{R_{2}}{R_{1} + R_{2}}] \cdot  i_{t}otal\)</td><td>\(i_{1} = i_{2} = 0.5 \cdot  i_{t}otal\)</td></tr><tr><td>Delta to Wye \((\Delta  \to  Y)\)</td><td>\(R_{1} = \frac{R_{b} \cdot  R_{c}}{R_{a} + R_{b} + R_{c}}\)</td><td>\(R_{Y} = \frac{R_{\Delta }}{3}\)</td></tr><tr><td>Wye to Delta \((Y \to  \Delta )\)</td><td>\(R_{a} = \frac{R_{1}R_{2} + R_{2}R_{3} + R_{3}R_{1}}{R_{1}}\)</td><td>\(R_{\Delta } = 3 \cdot  R_{Y}\)</td></tr></tbody></table>
 </div>
 
-<h2>Bridge Equivalent Resistance Using \(\Delta  \to  Y\) Transformation</h2>
+<h2 data-stars="★★★★" data-tier="2">Bridge Equivalent Resistance Using \(\Delta  \to  Y\) Transformation</h2>
 <div class="pyq">
-<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Previous Year Question · Previous Year Question · Final Exam 2022 Q2(c) &amp; 2020 Q2(b) · <b class="asked">Asked in: 2022, 2020 (8 Marks)</b></p>
-<p><b>Find total equivalent resistance \(R_{a}b\) and source current \(I_{s}\) for an unbalanced 5-resistor bridge.</b></p>
-<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>An unbalanced bridge circuit connected to a 24 V DC source consists of upper delta resistors \(R_{a} = 30 \Omega , R_{b} = 10 \Omega , R_{c} = 20 \Omega \), and lower arm resistors \(R_{l}eft = 11 \Omega \) and \(R_{r}ight = 7 \Omega \). Find the total equivalent resistance \(R_{a}b\) and the source current \(I_{s}\).</p><p class="lbl">Given parameters</p><ul><li>Upper \(\Delta \) network: \(R_{a} = 30 \Omega , R_{b} = 10 \Omega , R_{c} = 20 \Omega \) (Sum \(= 60 \Omega \))</li><li>Lower series arms after \(\Delta  \to  Y\) conversion: \(R_{l}eft = 11 \Omega , R_{r}ight = 7 \Omega \)</li><li>Applied DC source voltage \(V_{s} = 24 V\)</li></ul></div>
+<p class="meta"><span class="st t2" title="Priority 2">★★★★</span> <span class="no">04.</span> Previous Year Question (PYQ) · Previous Year Question · Final Exam 2022 Q2(c) &amp; 2020 Q2(b) · <b class="asked">Asked in: 2022, 2020 (8 Marks)</b></p>
+<ul class="lead"><li>Find total equivalent resistance \(R_{a}b\) and source current \(I_{s}\) for an unbalanced 5-resistor bridge.</li></ul>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><ul><li>An unbalanced bridge circuit connected to a 24 V DC source consists of upper delta resistors \(R_{a} = 30 \Omega , R_{b} = 10 \Omega , R_{c} = 20 \Omega \), and lower arm resistors \(R_{l}eft = 11 \Omega \) and \(R_{r}ight = 7 \Omega \). Find the total equivalent resistance \(R_{a}b\) and the source current \(I_{s}\).</li></ul>
+<p class="lbl">Given parameters</p><ul><li>Upper \(\Delta \) network: \(R_{a} = 30 \Omega , R_{b} = 10 \Omega , R_{c} = 20 \Omega \) (Sum \(= 60 \Omega \))</li><li>Lower series arms after \(\Delta  \to  Y\) conversion: \(R_{l}eft = 11 \Omega , R_{r}ight = 7 \Omega \)</li><li>Applied DC source voltage \(V_{s} = 24 V\)</li></ul>
+</div>
 <div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Convert the upper \(\Delta  (R_{a}, R_{b}, R_{c})\) into an equivalent \(Y (R_{1}, R_{2}, R_{3})\)</b><p><small>Using the \(\Delta  \to  Y\) denominator \(R_{a} + R_{b} + R_{c} = 30 + 10 + 20 = 60 \Omega \):</small></p><div class="work"><p>\(R_{1}\) (top) \(= \frac{R_{b}\cdot R_{c}}{60}\)</p><p>\(= \frac{10\times 20}{60}\)</p><p>\(= 3.33 \Omega \)</p><p>\(R_{2}\) (left) \(= \frac{R_{a}\cdot R_{c}}{60}\)</p><p>\(= \frac{30\times 20}{60}\)</p><p>\(= 10 \Omega \)</p><p>\(R_{3}\) (right) \(= \frac{R_{a}\cdot R_{b}}{60}\)</p><p>\(= \frac{30\times 10}{60}\)</p><p>\(= 5 \Omega \)</p></div></div><div class="step"><b>Step 2: Combine series &amp; parallel branches with lower arms</b><p><small>Left branch \(R_{L} = R_{2} + 11 = 10 + 11 = 21 \Omega \); Right branch \(R_{R} = R_{3} + 7 = 5 + 7 = 12 \Omega \):</small></p><div class="work"><p>\(R_{p}arallel = \frac{21 \times  12}{21 + 12}\)</p><p>\(= \frac{252}{33}\)</p><p>\(= 7.64 \Omega \)</p><p>\(R_{a}b = R_{1} + R_{p}arallel\)</p><p>\(= 3.33 + 7.64\)</p><p>\(= 10.97 \Omega \)</p></div></div><div class="step"><b>Step 3: Calculate total source current \(I_{s}\)</b><p><small>Apply Ohm’s Law at the input terminals:</small></p><div class="work"><p>\(I_{s} = \frac{V_{s}}{R_{a}b}\)</p><p>\(= 24 \frac{V}{10.97} \Omega \)</p><p>\(= 2.19 A\)</p><p class="answer">∴ \(R_{a}b = 10.97 \Omega ,  I_{s} = 2.19 A\)</p></div></div></div>
 </div>
 
-<h2>Ladder Network Reduction &amp; Current Divider Branch Analysis</h2>
+<h2 data-stars="★★★" data-tier="3">Ladder Network Reduction &amp; Current Divider Branch Analysis</h2>
 <div class="example">
-<p class="meta"><span class="tier t3">P3 · Professor-Followed Book</span> · Worked Numerical Example · Professor-Followed Book · Alexander &amp; Sadiku (6th Ed.), Ch. 2</p>
-<p><b>Reduce a resistive ladder from the load end back to the source, then use current division at each node.</b></p>
-<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>In a resistive ladder connected to a 30 V source, series resistor \(R_{1} = 4 \Omega \) feeds a parallel combination of \(R_{2} = 6 \Omega \) and a right-hand branch of \(R_{3} = 2 \Omega \) in series with \(R_{4} = 4 \Omega \). Find the total equivalent resistance \(R_{eq}\), source current \(I_{s}\), and current \(I_{4}\) through \(R_{4}\).</p></div>
+<p class="meta"><span class="st t3" title="Priority 3">★★★</span> <span class="no">05.</span> Worked Numerical Example · Professor-Followed Book · Alexander &amp; Sadiku (6th Ed.), Ch. 2</p>
+<ul class="lead"><li>Reduce a resistive ladder from the load end back to the source, then use current division at each node.</li></ul>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><ul><li>In a resistive ladder connected to a 30 V source, series resistor \(R_{1} = 4 \Omega \) feeds a parallel combination of \(R_{2} = 6 \Omega \) and a right-hand branch of \(R_{3} = 2 \Omega \) in series with \(R_{4} = 4 \Omega \). Find the total equivalent resistance \(R_{eq}\), source current \(I_{s}\), and current \(I_{4}\) through \(R_{4}\).</li></ul>
+</div>
 <div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Step 1: Collapse ladder from right to left</b><p><small>Combine \(R_{3} + R_{4}\) in series, then in parallel with \(R_{2}\):</small></p><div class="work"><p>\(R_{34} = R_{3} + R_{4}\)</p><p>\(= 2 + 4\)</p><p>\(= 6 \Omega \)</p><p>\(R_{p} = \frac{R_{2} \times  R_{34}}{R_{2} + R_{34}}\)</p><p>\(= \frac{6 \times  6}{12}\)</p><p>\(= 3 \Omega \)</p><p class="answer">∴ \(R_{eq} = R_{1} + R_{p} = 4 + 3 = 7 \Omega \)</p></div></div><div class="step"><b>Step 2: Find source current \(I_{s}\) and branch current \(I_{4}\)</b><p><small>Apply Ohm’s Law and the Current Divider Rule:</small></p><div class="work"><p>\(I_{s} = \frac{30}{7}\)</p><p>\(= 4.29 A\)</p><p>\(I_{4} = I_{s} \cdot  [ \frac{R_{2}}{R_{2} + R_{34}} ]\)</p><p class="answer">∴ \(I_{4} = 4.29 \times  (\frac{6}{12}) = 2.14 A\)</p></div></div></div>
 </div>
 
-<h2>Balanced Wheatstone Bridge Condition &amp; Zero-Galvanometer Current Proof</h2>
+<h2 data-stars="★" data-tier="4">Balanced Wheatstone Bridge Condition &amp; Zero-Galvanometer Current Proof</h2>
 <div class="theory">
-<p class="meta"><span class="tier t4">P4 · Syllabus Book</span> · Core Theory &amp; Concept · Syllabus Book · Robert L. Boylestad (Introductory Circuit Analysis, Ch. 7)</p>
-<p><b>A 4-arm Wheatstone bridge is balanced \((I_{G} = 0 A)\) when the products of opposite arm resistances are equal: \(R_{1}R_{4} = R_{2}R_{3}\).</b></p>
+<p class="meta"><span class="st t4" title="Priority 4">★</span> <span class="no">06.</span> Core Theory &amp; Concept · Syllabus Book · Robert L. Boylestad (Introductory Circuit Analysis, Ch. 7)</p>
+<ul class="lead"><li>A 4-arm Wheatstone bridge is balanced \((I_{G} = 0 A)\) when the products of opposite arm resistances are equal: \(R_{1}R_{4} = R_{2}R_{3}\).</li></ul>
 <div class="eq"><b>Balanced Wheatstone Bridge Ratio</b><br><span class="boxed">\(\frac{R_{1}}{R_{2}} = \frac{R_{3}}{R_{4}}   ⟺   R_{1} R_{4} = R_{2} R_{3}\)   (when \(I_{G} = 0\))</span></div>
 </div>
 

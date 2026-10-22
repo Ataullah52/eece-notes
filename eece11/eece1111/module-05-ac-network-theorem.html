@@ -7,37 +7,37 @@
 <p class="eyebrow">EECE1111 · Module 05 · about 35 min · Last updated October 2026</p>
 <p>Thevenin's theorem, Norton's theorem, superposition theorem, Millman's theorem, Substitution theorem, Maximum power transfer theorem and Reciprocity Theorem.</p>
 <figure class="figure"><svg class="fig" viewBox="0 0 420 180" role="img" aria-label="AC Thevenin equivalent with a load"><path class="s" d="M60 78V45H130M190 45H340V78M340 102V135H60V102"/><rect class="bx" x="130" y="35" width="60" height="20" rx="3"/><text x="160" y="49" text-anchor="middle" class="">Zth</text><rect class="bx" x="320" y="78" width="40" height="24" rx="3"/><text x="340" y="94" text-anchor="middle" class="">ZL</text><circle class="bx" cx="60" cy="90" r="13"/><text x="60" y="94" text-anchor="middle" class="">~</text><text x="30" y="94" text-anchor="middle" class="">Vth</text><path class="s" d="M215 45H255"/><polygon class="k" points="245,39 257,45 245,51"/><text x="235" y="34" text-anchor="middle" class="">I</text><text x="210" y="160" text-anchor="middle" class="t2">ZL = Zth*</text></svg><figcaption>AC Thevenin: Vth in series with Zth. Maximum average power to the load when ZL = Zth*.</figcaption></figure>
-<p class="legend"><span class="tier t1">P1 Class Note</span><span class="tier t2">P2 Previous Year Question</span><span class="tier t3">P3 Professor-Followed Book</span><span class="tier t4">P4 Syllabus Book</span></p>
-<h2>Maximum Average Power Transfer Theorem in AC Sinusoidal Networks</h2>
+<p class="legend"><span class="st t1">★★★★★ Class Note</span><span class="st t2">★★★★ Previous Year Question</span><span class="st t3">★★★ Professor-Followed Book</span><span class="st t4">★ Syllabus Book</span></p>
+<h2 data-stars="★★★★★" data-tier="1">Maximum Average Power Transfer Theorem in AC Sinusoidal Networks</h2>
 <div class="theory">
-<p class="meta"><span class="tier t1">P1 · Class Note</span> · Core Theory &amp; Concept · Class Note · AC Network Theorems &amp; Complex Conjugate Matching</p>
-<p><b>For a complex load impedance \(Z_{L} = R_{L} + jX_{L}\) connected to an AC Thevenin network \(Z_{T}h = R_{T}h + jX_{T}h\), maximum average power occurs when \(Z_{L} = Z_{T}h* = R_{T}h - jX_{T}h\).</b></p>
-<p>In sinusoidal steady-state AC circuits, all DC network theorems (Superposition, Thevenin, Norton, Millman, Substitution, and Reciprocity) extend directly to the frequency domain by replacing real voltages/currents with phasors (V, I) and resistances with complex impedances \((Z = R + jX)\).</p>
-<p>For Maximum Average Power Transfer to a variable complex load \(Z_{L} = R_{L} + jX_{L}\), the load reactance must first cancel the Thevenin reactance \((X_{L} = -X_{T}h)\) and the load resistance must match the Thevenin resistance \((R_{L} = R_{T}h)\).</p>
+<p class="meta"><span class="st t1" title="Priority 1">★★★★★</span> <span class="no">01.</span> Core Theory &amp; Concept · Class Note · AC Network Theorems &amp; Complex Conjugate Matching</p>
+<ul class="lead"><li>For a complex load impedance \(Z_{L} = R_{L} + jX_{L}\) connected to an AC Thevenin network \(Z_{T}h = R_{T}h + jX_{T}h\), maximum average power occurs when \(Z_{L} = Z_{T}h* = R_{T}h - jX_{T}h\).</li></ul>
+<ul><li>In sinusoidal steady-state AC circuits, all DC network theorems (Superposition, Thevenin, Norton, Millman, Substitution, and Reciprocity) extend directly to the frequency domain by replacing real voltages/currents with phasors (V, I) and resistances with complex impedances \((Z = R + jX)\).</li><li>For Maximum Average Power Transfer to a variable complex load \(Z_{L} = R_{L} + jX_{L}\), the load reactance must first cancel the Thevenin reactance \((X_{L} = -X_{T}h)\) and the load resistance must match the Thevenin resistance \((R_{L} = R_{T}h)\).</li></ul>
 <div class="eq"><b>Complex Conjugate Impedance Matching Condition</b> <small>(Ohms \((\Omega )\))</small><br><span class="boxed">\(Z_{L} = Z_{Th}^*   ⟺   R_{L} = R_{Th}\)  and  \(X_{L} = -X_{Th}\)</span></div>
 <div class="eq"><b>Maximum Average AC Power Transferred (using RMS \(V_{T}h\))</b> <small>(Watts (W))</small><br><span class="boxed">\(P_{\max} = |V_\{Th\),rms\(\}|\frac{^{2}}{4 \cdot  R_{Th}} = |V_\{Th\),peak\(\}|\frac{^{2}}{8 \cdot  R_{Th}}\)</span></div>
 <div class="eq"><b>Purely Resistive Load Restriction \((X_{L} = 0)\)</b> <small>(Ohms \((\Omega )\) when load reactance cannot be varied)</small><br><span class="boxed">\(R_{L} = |Z_{Th}| = \sqrt{R_{Th}^{2} + X_{Th}^{2}}\)</span></div>
 </div>
 
-<h2>AC Thevenin Equivalent &amp; Maximum Average Power Delivered to Load \(Z_{L}\)</h2>
+<h2 data-stars="★★★★" data-tier="2">AC Thevenin Equivalent &amp; Maximum Average Power Delivered to Load \(Z_{L}\)</h2>
 <div class="pyq">
-<p class="meta"><span class="tier t2">P2 · Previous Year Question</span> · Previous Year Question · Previous Year Question · PUST EECE Final Exam 2022 Q5(b) &amp; 2021 Q5(c) · <b class="asked">Asked in: 2022, 2021 (6 Marks)</b></p>
-<p><b>Given \(Z_{T}h = 4 + j3 \Omega \) and \(V_{T}h = 20\angle 0^{\circ} V\) (RMS), find \(Z_{L}\) for maximum average power and compute \(P_{\max}\).</b></p>
-<div class="problem"><b class="lbl">Problem / Theorem Question</b><p>An AC two-terminal network has a Thevenin open-circuit RMS voltage \(V_{T}h = 20\angle 0^{\circ} V\) and Thevenin impedance \(Z_{T}h = 4 + j3 \Omega \). Determine (a) the complex load impedance \(Z_{L}\) for maximum average power transfer and \(P_{\max}\)</p><p>(b) the value of a purely resistive load \(R_{L}\) for maximum power.</p></div>
+<p class="meta"><span class="st t2" title="Priority 2">★★★★</span> <span class="no">02.</span> Previous Year Question (PYQ) · Previous Year Question · PUST EECE Final Exam 2022 Q5(b) &amp; 2021 Q5(c) · <b class="asked">Asked in: 2022, 2021 (6 Marks)</b></p>
+<ul class="lead"><li>Given \(Z_{T}h = 4 + j3 \Omega \) and \(V_{T}h = 20\angle 0^{\circ} V\) (RMS), find \(Z_{L}\) for maximum average power and compute \(P_{\max}\).</li></ul>
+<div class="problem"><b class="lbl">Problem / Theorem Question</b><ul><li>An AC two-terminal network has a Thevenin open-circuit RMS voltage \(V_{T}h = 20\angle 0^{\circ} V\) and Thevenin impedance \(Z_{T}h = 4 + j3 \Omega \). Determine (a) the complex load impedance \(Z_{L}\) for maximum average power transfer and \(P_{\max}\)</li><li class="sub">(b) the value of a purely resistive load \(R_{L}\) for maximum power.</li></ul>
+</div>
 <div class="solution"><b class="lbl">Step-by-step solution</b><div class="step"><b>Part (a) &amp; Part (b): Complex Conjugate vs. Purely Resistive Load</b><p><small>Apply \(Z_{L} = Z_{T}h*\) for Part (a) and \(R_{L} = |Z_{T}h|\) for Part (b):</small></p><div class="work"><p>(a) \(Z_{L} = Z_{Th}^*\)</p><p>\(= 4 - j3 \Omega \)</p><p>\(P_{\max} = |V_\{Th\),rms\(\}|\frac{^{2}}{4 R_{Th}} = \frac{20^{2}}{4 \times  4}\)</p><p class="answer">∴ \(Z_{L} = 4 - j3 \Omega ,   P_{\max} = 25 W\)</p><p>(b) For purely resistive load \((X_{L} = 0)\):</p><p>\(R_{L} = \sqrt{4^{2} + 3^{2}}\)</p><p class="answer">∴ \(R_{L} = 5 \Omega \)</p></div></div></div>
 </div>
 
-<h2>AC Superposition with Multi-Frequency Sources</h2>
+<h2 data-stars="★★★" data-tier="3">AC Superposition with Multi-Frequency Sources</h2>
 <div class="theory">
-<p class="meta"><span class="tier t3">P3 · Professor-Followed Book</span> · Core Theory &amp; Concept · Professor-Followed Book · Alexander &amp; Sadiku (Ch. 10 &amp; Ch. 11)</p>
-<p><b>When AC sources operate at different angular frequencies \(\omega _{1} \neq  \omega _{2}\), phasors cannot be added directly; sum the time-domain responses.</b></p>
+<p class="meta"><span class="st t3" title="Priority 3">★★★</span> <span class="no">03.</span> Core Theory &amp; Concept · Professor-Followed Book · Alexander &amp; Sadiku (Ch. 10 &amp; Ch. 11)</p>
+<ul class="lead"><li>When AC sources operate at different angular frequencies \(\omega _{1} \neq  \omega _{2}\), phasors cannot be added directly</li><li>sum the time-domain responses.</li></ul>
 <div class="eq"><b>Multi-Frequency Superposition Rule</b><br><span class="boxed">\(v(t) = v_{DC} + v_{1}(t; \omega _{1}) + v_{2}(t; \omega _{2})\)</span></div>
 </div>
 
-<h2>AC Millman’s &amp; Norton Phasor Equivalence in Parallel Impedance Branches</h2>
+<h2 data-stars="★" data-tier="4">AC Millman’s &amp; Norton Phasor Equivalence in Parallel Impedance Branches</h2>
 <div class="example">
-<p class="meta"><span class="tier t4">P4 · Syllabus Book</span> · Worked Numerical Example · Syllabus Book · Corcoran &amp; Kerchner (Alternating-Current Circuits)</p>
-<p><b>Convert parallel AC voltage branches into Norton phasor currents \(I_{N} = V_{k} Y_{k}\) and sum admittances \(Y_{eq} = \sum  Y_{k}\).</b></p>
+<p class="meta"><span class="st t4" title="Priority 4">★</span> <span class="no">04.</span> Worked Numerical Example · Syllabus Book · Corcoran &amp; Kerchner (Alternating-Current Circuits)</p>
+<ul class="lead"><li>Convert parallel AC voltage branches into Norton phasor currents \(I_{N} = V_{k} Y_{k}\) and sum admittances \(Y_{eq} = \sum  Y_{k}\).</li></ul>
 <div class="eq"><b>AC Phasor Millman Formula</b><br><span class="boxed">\(V_{eq} = \frac{\sum  V_{k} Y_{k}}{\sum  Y_{k}}\),   where \(Y_{k} = \frac{1}{Z_{k}}\)</span></div>
 </div>
 
