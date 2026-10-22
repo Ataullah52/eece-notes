@@ -90,3 +90,12 @@ html,body{background:#fff!important;color:#0f172a!important}.t1{color:#b45309!im
 ul.lead li{font-weight:500}li.sub{list-style:none;margin-left:-.6rem}
 ul.note{margin:.3rem 0 0;padding-left:1.1rem;font-size:.82rem;color:var(--mute)}
 .boxed .fl{display:block;padding:.15rem 0}
+/* PDF layout: let long note blocks flow across pages (no big white gaps); keep only small units together */
+@media print{
+:is(.definition,.theory,.memorize,.example,.pyq,.warn){break-inside:auto!important;padding:.5rem .9rem .6rem;margin:.6rem 0}
+.problem,.solution{break-inside:auto}
+.step,.eq,.figure,.meta,.answer,tr,caption{break-inside:avoid}
+h2,h3,.lbl,caption{break-after:avoid}
+thead{display:table-header-group}table{break-inside:auto;margin:.6rem 0}
+p{margin:.35rem 0;orphans:3;widows:3}li{margin:.12rem 0}.work p{margin:.15rem 0}.step{margin:.5rem 0 0}h2{margin:1.2rem 0 .5rem}
+}
