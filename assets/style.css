@@ -99,3 +99,5 @@ h2,h3,.lbl,caption{break-after:avoid}
 thead{display:table-header-group}table{break-inside:auto;margin:.6rem 0}
 p{margin:.35rem 0;orphans:3;widows:3}li{margin:.12rem 0}.work p{margin:.15rem 0}.step{margin:.5rem 0 0}h2{margin:1.2rem 0 .5rem}
 }
+/* PDF: a solution "step" can hold a whole worked problem, so let it break across pages too */
+@media print{.step,.work,.solution,.problem{break-inside:auto!important}.step>b:first-child{break-after:avoid}}
