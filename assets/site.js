@@ -1,7 +1,7 @@
 addEventListener('DOMContentLoaded',()=>{
 const d=document,r=d.body.dataset.root||'.',root=d.documentElement,K='eece-notes-theme';
 const f=d.createElement('link');f.rel='stylesheet';f.href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap';d.head.append(f);
-const sv=localStorage.getItem(K);if(sv)root.dataset.theme=sv;
+root.classList.add('js');const sv=localStorage.getItem(K);if(sv)root.dataset.theme=sv;
 const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
 const home=r+'/index.html',unit=d.querySelector('h1'),nav=d.createElement('nav');nav.className='topbar';
 const depth=r==='.'?0:r.split('/').length,file=location.pathname.split('/').pop(),isIdx=file===''||file==='index.html';
@@ -15,6 +15,15 @@ if(unit&&!isIdx){const hs=[...d.querySelectorAll('main h2')];
 if(hs.length>2){hs.forEach((h,i)=>h.id=h.id||'s'+(i+1));const t=d.createElement('div');t.className='toc';
 t.innerHTML='<b>Contents</b><ol>'+hs.map(h=>'<li><a href="#'+h.id+'">'+h.innerHTML.replace(/<[^>]+>/g,'')+'</a>'+(h.dataset.stars?' <span class="st t'+h.dataset.tier+'">'+h.dataset.stars+'</span>':'')+'</li>').join('')+'</ol>';
 const p=unit.nextElementSibling;(p&&p.tagName==='P'?p:unit).after(t);}}
+
+const sols=[...d.querySelectorAll('.solution')];
+if(sols.length){const T0='step-by-step solution',one=(x,o)=>{x.classList.toggle('open',o);const b=x.querySelector('.soltog');b.setAttribute('aria-expanded',o);b.textContent=(o?'▾ Hide ':'▸ Show ')+T0};
+sols.forEach(x=>{one(x,false);x.querySelector('.soltog').onclick=()=>{one(x,!x.classList.contains('open'));ga()}});
+const g=d.createElement('button'),ga=()=>{g.textContent=sols.every(x=>x.classList.contains('open'))?'Hide all solutions':'Show all solutions'};ga();
+g.onclick=()=>{const o=!sols.every(x=>x.classList.contains('open'));sols.forEach(x=>one(x,o));ga()};
+const l=d.createElement('label');l.className='pdfopt';l.innerHTML='<input type="checkbox" id="ps" checked> Solutions in PDF';
+l.firstChild.onchange=e=>root.classList.toggle('nosol',!e.target.checked);
+const tg0=nav.querySelector('#tg');tg0.after(g);g.after(l);}
 let was;addEventListener('beforeprint',()=>{was=root.dataset.theme;root.dataset.theme='light'});addEventListener('afterprint',()=>{if(was)root.dataset.theme=was;else delete root.dataset.theme});
 const tg=d.getElementById('tg'),sync=()=>tg.textContent=isDark()?'☀ Light':'☾ Dark';sync();
 tg.onclick=()=>{const n=isDark()?'light':'dark';root.dataset.theme=n;localStorage.setItem(K,n);sync()};

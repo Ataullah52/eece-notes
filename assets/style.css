@@ -101,3 +101,11 @@ p{margin:.35rem 0;orphans:3;widows:3}li{margin:.12rem 0}.work p{margin:.15rem 0}
 }
 /* PDF: a solution "step" can hold a whole worked problem, so let it break across pages too */
 @media print{.step,.work,.solution,.problem{break-inside:auto!important}.step>b:first-child{break-after:avoid}}
+/* solutions: hidden by default on screen, toggle to show; PDF includes them unless unticked */
+.soltog{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.4rem .9rem;margin:.2rem 0;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--accent);font:600 .85rem var(--sans);cursor:pointer}
+.soltog:hover{border-color:var(--accent)}
+.js .solution:not(.open) .solbody{display:none}
+.js .solution:not(.open){padding:0;border:0;background:none;margin:.6rem 0}
+.pdfopt{display:flex;align-items:center;gap:.35rem;font:600 .8rem var(--sans);color:var(--mute);white-space:nowrap}
+@media(max-width:640px){.pdfopt{display:none}}
+@media print{.soltog,.pdfopt{display:none!important}.solution .solbody{display:block!important}.js .solution:not(.open){padding:.8rem 1rem;border:1px solid var(--line);background:none}html.nosol .solution{display:none!important}}
