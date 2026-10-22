@@ -1,7 +1,7 @@
 # AI_SPEC — how to write a note page (read with AI_INDEX.md)
 Task: write or edit ONLY the one chapter file you are given. Never edit assets/, index.html, AI_*.md.
 ## Page
-One file per unit: `<subject>/unit-NN-name.html`. Copy the head/body skeleton from `eece1111/unit-01-circuit-variables.html` exactly (Pico CSS + ../assets/style.css + ../assets/site.js, `<body data-root="..">`, `<main class="container">`). Include `<title>` and `<meta name="description">`.
+One file per unit: `<subject>/unit-NN-name.html`. Copy the head/body skeleton from `eece1111/unit-01-circuit-variables.html` exactly (../assets/style.css + ../assets/site.js, no framework, `<body data-root="..">`, `<main class="container">`). Include `<title>` and `<meta name="description">`.
 ## Blocks (own classes, no inline CSS)
 `definition` · `theory` · `memorize` · `example` · `pyq` (past question + solution) · `warn` (common mistakes). Final answer of a solved problem: `<p class="answer">…</p>` (boxed).
 ## Priority
