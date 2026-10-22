@@ -1,0 +1,171 @@
+{
+ "semesters": [
+  {
+   "id": "eece11",
+   "year": 1,
+   "semester": 1,
+   "courses": [
+    {
+     "id": "eece1111",
+     "title": "Electrical Circuits I",
+     "type": "Theory",
+     "credits": 3.0,
+     "topics": [
+      {
+       "n": 1,
+       "title": "Circuit variables and elements"
+      },
+      {
+       "n": 2,
+       "title": "Basic laws"
+      },
+      {
+       "n": 3,
+       "title": "Nodal and mesh analysis, source transformation"
+      },
+      {
+       "n": 4,
+       "title": "DC network theorems"
+      },
+      {
+       "n": 5,
+       "title": "Sinusoids, phasors, AC power, resonance"
+      },
+      {
+       "n": 6,
+       "title": "AC network theorems"
+      },
+      {
+       "n": 7,
+       "title": "Magnetic circuits, capacitor and inductor energy"
+      }
+     ]
+    },
+    {
+     "id": "eece1112",
+     "title": "Electrical Circuits I Sessional",
+     "type": "Sessional",
+     "credits": 1.5,
+     "topics": []
+    },
+    {
+     "id": "phy1101",
+     "title": "Physics",
+     "type": "Theory",
+     "credits": 3.0,
+     "topics": []
+    },
+    {
+     "id": "ce1101",
+     "title": "Engineering Graphics",
+     "type": "Sessional",
+     "credits": 1.5,
+     "topics": []
+    },
+    {
+     "id": "hum1101",
+     "title": "English",
+     "type": "Theory",
+     "credits": 3.0,
+     "topics": []
+    },
+    {
+     "id": "math1101",
+     "title": "Differential Calculus and Analytical Geometry",
+     "type": "Theory",
+     "credits": 3.0,
+     "topics": [
+      {
+       "n": 1,
+       "title": "Functions, limit and continuity"
+      },
+      {
+       "n": 2,
+       "title": "Differentiability, successive differentiation and Leibniz theorem"
+      },
+      {
+       "n": 3,
+       "title": "Mean value theorems, series expansion, maxima and minima"
+      },
+      {
+       "n": 4,
+       "title": "Tangent, normal, curvature and functions of two variables"
+      },
+      {
+       "n": 5,
+       "title": "Co-ordinate systems and pair of straight lines"
+      },
+      {
+       "n": 6,
+       "title": "Conic sections and system of circles"
+      },
+      {
+       "n": 7,
+       "title": "3D co-ordinates, direction cosines and ratios, planes and lines"
+      },
+      {
+       "n": 8,
+       "title": "Sphere, cone, cylinder and conicoids"
+      }
+     ]
+    },
+    {
+     "id": "chem1101",
+     "title": "Physical and Inorganic Chemistry",
+     "type": "Theory",
+     "credits": 3.0,
+     "topics": []
+    },
+    {
+     "id": "eece1100",
+     "title": "Viva-voce",
+     "type": "Viva",
+     "credits": 0.75,
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "eece12",
+   "year": 1,
+   "semester": 2,
+   "courses": []
+  },
+  {
+   "id": "eece21",
+   "year": 2,
+   "semester": 1,
+   "courses": []
+  },
+  {
+   "id": "eece22",
+   "year": 2,
+   "semester": 2,
+   "courses": []
+  },
+  {
+   "id": "eece31",
+   "year": 3,
+   "semester": 1,
+   "courses": []
+  },
+  {
+   "id": "eece32",
+   "year": 3,
+   "semester": 2,
+   "courses": []
+  },
+  {
+   "id": "eece41",
+   "year": 4,
+   "semester": 1,
+   "courses": []
+  },
+  {
+   "id": "eece42",
+   "year": 4,
+   "semester": 2,
+   "courses": []
+  }
+ ]
+}
